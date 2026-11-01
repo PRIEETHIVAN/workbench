@@ -1,9 +1,11 @@
 // ============================================================
 // Unified Engineering Workbench — app.js
-// All computation runs in C++ backend at localhost:8765
+// All computation runs in the same-origin C++ HTTP API.
 // ============================================================
 
 const API = '';
+const serverAddress = document.getElementById('server-address');
+if (serverAddress) serverAddress.textContent = window.location.host;
 
 // ── Tab Navigation ────────────────────────────────────────────────────────────
 function showTab(tabId) {
@@ -586,6 +588,17 @@ document.addEventListener('DOMContentLoaded', () => {
   buildFEAChart();
   buildPerfCharts();
   buildBPChart();
+  const statusDot = document.getElementById('srv-dot');
+  const statusText = document.getElementById('srv-text');
+  apiGet('/api/health').then(() => {
+    statusDot.classList.remove('offline');
+    statusDot.classList.add('online');
+    statusText.textContent = 'Server online';
+  }).catch(() => {
+    statusDot.classList.remove('online');
+    statusDot.classList.add('offline');
+    statusText.textContent = 'Server offline';
+  });
   // Auto-discover devices on hardware tab click
   document.querySelector('[data-tab="hw-tab"]').addEventListener('click', () => {
     setTimeout(async () => {

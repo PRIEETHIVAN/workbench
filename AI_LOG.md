@@ -76,6 +76,8 @@ Verification performed in this session: GNU 16.2.0 Release build refreshed; CTes
 
 Release hardening also anchors the process working directory to the executable folder. A smoke launch from an unrelated working directory successfully served the root page, health endpoint, sample STL, and local Three.js file.
 
+After the user reported garbled interface symbols, the HTML's mis-decoded UTF-8 sequences were repaired. The temperature CSV label now shows the parser's exact required header, the sidebar reports the active host and port instead of a hard-coded 8765, and its status indicator checks the health endpoint.
+
 ### Corrections to earlier draft disclosure
 
 - Three.js and Chart.js are now bundled and served locally. The earlier statement that the frontend needs CDN access is obsolete.
