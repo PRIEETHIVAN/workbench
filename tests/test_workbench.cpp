@@ -43,15 +43,28 @@ int main() {
 
         const auto stl = viz::parse_stl(read_file(std::string(WORKBENCH_SOURCE_DIR) + "/data/sample.stl"));
         require(stl.valid && stl.triangles.size() == 12, "sample ASCII STL did not parse as 12 facets");
-        require(!viz::parse_stl("").valid, "empty STL must be rejected");
-        require(!viz::parse_stl("solid empty\nendsolid empty\n").valid, "facet-free STL must be rejected");
+        const auto empty_stl = viz::parse_stl("");
+        require(!empty_stl.valid && !empty_stl.error_msg.empty(),
+                "empty STL must be rejected with an understandable error");
+        const auto malformed_stl = viz::parse_stl("not an STL\n");
+        require(!malformed_stl.valid && malformed_stl.error_msg.find("solid") != std::string::npos,
+                "malformed STL must be rejected with a format hint");
+        const auto facet_free_stl = viz::parse_stl("solid empty\nendsolid empty\n");
+        require(!facet_free_stl.valid && !facet_free_stl.error_msg.empty(),
+                "facet-free STL must be rejected with an understandable error");
 
         const auto csv = viz::parse_temperature_csv(read_file(std::string(WORKBENCH_SOURCE_DIR) + "/data/sample_temperatures.csv"));
         require(csv.valid && csv.nodes.size() == 30, "sample temperature CSV did not parse as 30 nodes");
-        require(!viz::parse_temperature_csv("").valid, "empty CSV must be rejected");
-        require(!viz::parse_temperature_csv("node_id,x_m,y_m,z_m,temperature_C\n1,0,0,0,NaN\n").valid,
+        const auto empty_csv = viz::parse_temperature_csv("");
+        require(!empty_csv.valid && !empty_csv.error_msg.empty(),
+                "empty CSV must be rejected with an understandable error");
+        const auto nonfinite_csv = viz::parse_temperature_csv(
+            "node_id,x_m,y_m,z_m,temperature_C\n1,0,0,0,NaN\n");
+        require(!nonfinite_csv.valid && nonfinite_csv.error_msg.find("non-finite") != std::string::npos,
                 "non-finite CSV values must be rejected");
-        require(!viz::parse_temperature_csv("node_id,x_m,y_m,z_m,temperature_C\n1,0x,0,0,20\n").valid,
+        const auto malformed_csv = viz::parse_temperature_csv(
+            "node_id,x_m,y_m,z_m,temperature_C\n1,0x,0,0,20\n");
+        require(!malformed_csv.valid && !malformed_csv.error_msg.empty(),
                 "trailing characters in numeric CSV values must be rejected");
 
         const backprop::BackpropParams p{0.5, 0.0, 1.0, 0.0};

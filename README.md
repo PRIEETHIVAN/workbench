@@ -48,7 +48,7 @@ The assembled equation is `−d/dx(kA dT/dx)=qA`, with uniform material and sour
 
 ## Verification evidence
 
-`tests/test_workbench.cpp` checks FEA midpoint error and endpoint boundary conditions, empty/malformed/non-finite parser cases, serial/parallel result order and nodal agreement, all four finite-difference gradients and decreasing training loss, and mock device recovery. The latest CTest run passed 1/1 core target. `results/performance_raw.json` and `results/performance_summary.csv` preserve measured data; `results/system_info.json` records the test workstation and compiler. The capture script also checks the HTTP routes for the page, samples, and local JavaScript libraries, then records launch-to-ready time.
+`tests/test_workbench.cpp` checks FEA midpoint error and endpoint boundary conditions, empty/malformed/non-finite parser cases, serial/parallel result order and nodal agreement, all four finite-difference gradients and decreasing training loss, and mock device recovery. The latest CTest run passed 1/1 core target. See [the test evidence matrix](tests/TESTING_EVIDENCE.md) for pass conditions and captured outcomes. `results/performance_raw.json` and `results/performance_summary.csv` preserve measured data; `results/system_info.json` records the test workstation and compiler. The capture script also checks valid and invalid parser HTTP requests, page and sample delivery, local JavaScript libraries, and launch-to-ready time.
 
 Current measurements are specific to this machine: AMD64 Family 25 Model 116, 8 physical and 16 logical cores, 15,654 MB RAM, GNU 16.2.0, `-Wall -Wextra -O2 -pthread`. Re-run capture on the final submission machine before replacing these evidence files.
 

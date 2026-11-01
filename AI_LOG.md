@@ -78,6 +78,8 @@ Release hardening also anchors the process working directory to the executable f
 
 After the user reported garbled interface symbols, the HTML's mis-decoded UTF-8 sequences were repaired. The temperature CSV label now shows the parser's exact required header, the sidebar reports the active host and port instead of a hard-coded 8765, and its status indicator checks the health endpoint.
 
+The requested testing-evidence matrix was added under `tests/`. Unit tests now assert readable parser errors for empty/malformed STL and invalid CSV input; the HTTP capture also submits invalid payloads and records their error messages. CTest passed 1/1 and its output was saved in `results/ctest_results.txt`.
+
 ### Corrections to earlier draft disclosure
 
 - Three.js and Chart.js are now bundled and served locally. The earlier statement that the frontend needs CDN access is obsolete.

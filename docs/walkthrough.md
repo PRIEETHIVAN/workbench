@@ -1,8 +1,8 @@
 # Timestamped Workbench Walkthrough
 
-**Recorded:** 2026-11-02 02:18:39 +05:30 (Asia/Kolkata)
+**Recorded:** 2026-11-02 02:46:15 +05:30 (Asia/Kolkata)
 **Build:** GNU 16.2.0, Release, C++17
-**Mode:** local HTTP capture on `127.0.0.1:18765`; no browser auto-launch
+**Mode:** local HTTP capture on `127.0.0.1:18769`; no browser auto-launch
 **Raw machine evidence:** `results/performance_raw.json`
 
 ## Run the walkthrough
@@ -17,6 +17,7 @@
 |---|---|---|
 | Launch | Start the executable with an unrelated working directory | Health, root page, sample STL, and local Three.js asset returned HTTP 200 |
 | Geometry | Load the bundled ASCII STL and temperature CSV | 12 STL triangles and 30 CSV nodes parsed; both sample endpoints returned HTTP 200 |
+| Parser error handling | Submit empty STL, malformed STL, and a CSV containing `NaN` | All rejected with readable messages; messages are stored in `results/performance_raw.json` |
 | Thermal FEM | Solve N=10, 20, 40, and 80 | Midpoint errors 1.25, 0.3125, 0.078125, and 0.01953125 °C |
 | Performance | Run seed-42 batch with 1, 2, and 4 workers | 100 cases, one warm-up, five timed repetitions; max nodal difference 0 °C for each worker count |
 | Hardware mocks | Discover, connect MCU, request telemetry, connect JTAG twice | Three devices; MCU and telemetry succeeded; first JTAG connect timed out and retry succeeded |
@@ -25,7 +26,7 @@
 
 ## Captured workstation results
 
-The machine reported AMD64 Family 25 Model 116, 8 physical and 16 logical cores, 15,654 MB RAM, and GNU 16.2.0. Startup-to-health was 631.97 ms. The 1/2/4-worker speedups were 0.8952, 1.9615, and 2.4643. This record is evidence from the development workstation, not a guarantee for another machine.
+The machine reported AMD64 Family 25 Model 116, 8 physical and 16 logical cores, 15,654 MB RAM, and GNU 16.2.0. Startup-to-health was 230.13 ms. The 1/2/4-worker speedups were 0.8735, 1.2495, and 2.1859. This record is evidence from the development workstation, not a guarantee for another machine.
 
 ## Candidate completion
 

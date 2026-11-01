@@ -43,9 +43,9 @@ The captured run used 100 cases, mesh baseline 48, seed 42, one warm-up, and fiv
 
 | Workers | Serial median (ms) | Parallel median (ms) | Speedup | Efficiency | Max nodal difference (°C) |
 |---:|---:|---:|---:|---:|---:|
-| 1 | 4.8065 | 5.3692 | 0.8952 | 0.8952 | 0 |
-| 2 | 5.4078 | 2.7570 | 1.9615 | 0.9807 | 0 |
-| 4 | 4.8135 | 1.9533 | 2.4643 | 0.6161 | 0 |
+| 1 | 4.7949 | 5.4892 | 0.8735 | 0.8735 | 0 |
+| 2 | 4.8134 | 3.8522 | 1.2495 | 0.6248 | 0 |
+| 4 | 4.6071 | 2.1076 | 2.1859 | 0.5465 | 0 |
 
 All rows passed the `1e-8 °C` agreement limit. One worker is slower than serial on this capture, which is expected from thread-pool overhead. These measurements describe this workstation only: AMD64 Family 25 Model 116, 8 physical/16 logical cores, 15,654 MB reported RAM, GNU 16.2.0, and `-Wall -Wextra -O2 -pthread`.
 
@@ -61,7 +61,7 @@ The API reports analytic gradients for all four parameters, central-difference c
 
 ## 7. Verification and limits
 
-The CTest suite passed its single `workbench_core` target. It exercises FEM values and boundary conditions, malformed/empty/non-finite parser input, parallel ordering and numerical agreement, all four gradient checks and loss reduction, and mock-device timeout recovery. The evidence script additionally exercised HTTP health, frontend and local asset delivery, sample file delivery/parsing, FEA runs, backprop, mock devices, and 1/2/4-worker benchmarks. A 2 November capture completed with the latest source build.
+The CTest suite passed its single `workbench_core` target; the saved output is `results/ctest_results.txt`. It exercises FEM values and boundary conditions, malformed/empty/non-finite parser input with readable errors, parallel ordering and numerical agreement, all four gradient checks and loss reduction, and mock-device timeout recovery. The evidence script additionally exercised HTTP health, frontend and local asset delivery, valid samples, readable empty/malformed STL and non-finite CSV errors, FEA runs, backprop, mock devices, and 1/2/4-worker benchmarks. The detailed matrix is in `tests/TESTING_EVIDENCE.md`.
 
 The implementation is a prototype: it supports ASCII STL rather than binary STL or native CAD, uses constant thermal properties and a one-dimensional steady model, and does not map CSV nodes onto STL topology. Hardware behavior is simulated. Input sizes are constrained by practical memory, not a configurable application-level byte limit. The runtime has Windows system-library dependencies; the project has not been validated on a separate clean Windows 11 machine.
 

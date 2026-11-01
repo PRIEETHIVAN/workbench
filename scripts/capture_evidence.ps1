@@ -50,6 +50,14 @@ try {
   $stl = Invoke-RestMethod -Uri "$base/api/stl/parse" -Method Post -ContentType 'application/json' -Body (@{content=$stlText} | ConvertTo-Json -Compress)
   $csv = Invoke-RestMethod -Uri "$base/api/csv/parse" -Method Post -ContentType 'application/json' -Body (@{content=$csvText} | ConvertTo-Json -Compress)
   if (-not $stl.valid -or -not $csv.valid) { throw "Bundled sample parser validation failed: STL=$($stl.error_msg) CSV=$($csv.error_msg)" }
+  $emptyStl = Invoke-RestMethod -Uri "$base/api/stl/parse" -Method Post -ContentType 'application/json' -Body (@{content=''} | ConvertTo-Json -Compress)
+  $malformedStl = Invoke-RestMethod -Uri "$base/api/stl/parse" -Method Post -ContentType 'application/json' -Body (@{content='not an STL'} | ConvertTo-Json -Compress)
+  $nonfiniteCsv = Invoke-RestMethod -Uri "$base/api/csv/parse" -Method Post -ContentType 'application/json' -Body (@{content="node_id,x_m,y_m,z_m,temperature_C`n1,0,0,0,NaN`n"} | ConvertTo-Json -Compress)
+  foreach ($case in @($emptyStl,$malformedStl,$nonfiniteCsv)) {
+    if ($case.valid -or [string]::IsNullOrWhiteSpace($case.error_msg)) {
+      throw 'Invalid parser input was not rejected with a readable error.'
+    }
+  }
 
   $benchmarks = @()
   foreach ($workers in @(1,2,4)) {
@@ -70,6 +78,11 @@ try {
     device_count=$deviceList.count; mcu_connect_success=$deviceConnect.success; telemetry_success=$telemetry.success
     jtag_first_attempt_success=$jtagFirst.success; jtag_retry_success=$jtagRetry.success
     stl_triangles=$stl.triangle_count; csv_nodes=$csv.node_count; backprop=$backprop
+    parser_error_cases=@(
+      [pscustomobject]@{ test='empty STL'; rejected=(-not $emptyStl.valid); message=$emptyStl.error_msg }
+      [pscustomobject]@{ test='malformed STL'; rejected=(-not $malformedStl.valid); message=$malformedStl.error_msg }
+      [pscustomobject]@{ test='non-finite CSV'; rejected=(-not $nonfiniteCsv.valid); message=$nonfiniteCsv.error_msg }
+    )
     fea=$fea; workload=@{case_count=$CaseCount;mesh_baseline=$MeshSize;seed=42}; benchmarks=$benchmarks
   }
   $evidence | ConvertTo-Json -Depth 20 | Set-Content -Encoding utf8 (Join-Path $outDir 'performance_raw.json')

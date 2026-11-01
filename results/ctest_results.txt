@@ -1,0 +1,11 @@
+﻿Captured: 2026-11-02 02:47:10 +05:30
+Command: ctest --test-dir build-release16 --output-on-failure
+Exit code: 0
+
+Test project C:/Users/hp/SRM/UnifiedEngWorkbench/build-release16
+    Start 1: workbench_core
+1/1 Test #1: workbench_core ...................   Passed    0.75 sec
+
+100% tests passed out of 1
+
+Total Test time (real) =   0.76 sec
