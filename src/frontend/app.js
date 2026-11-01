@@ -76,10 +76,10 @@ function initThreeJS() {
   camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.001, 1000);
   camera.position.set(2, 2, 4);
 
-  renderer = new THREE.WebGLRenderer({ antialias: true });
+  // Render directly into the canvas already present in the HTML.
+  renderer = new THREE.WebGLRenderer({ canvas: container, antialias: true });
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.setSize(container.clientWidth, container.clientHeight);
-  container.appendChild(renderer.domElement);
 
   // Lights
   const ambient = new THREE.AmbientLight(0xffffff, 0.4);
