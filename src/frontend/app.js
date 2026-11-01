@@ -232,8 +232,9 @@ document.getElementById('geo-load-btn').addEventListener('click', async () => {
       csvPoints = new THREE.Points(geo, mat);
       scene.add(csvPoints);
 
-      document.getElementById('geo-statusbar').textContent =
-        `CSV: ${csvNodes.length} nodes | T: ${tMin.toFixed(1)}–${tMax.toFixed(1)} °C`;
+      document.getElementById('stat-nodes').textContent = csvNodes.length;
+      document.getElementById('stat-trange').textContent =
+        `${tMin.toFixed(1)}–${tMax.toFixed(1)} °C`;
 
       // Update legend
       document.getElementById('legend-min').textContent = tMin.toFixed(1) + ' °C';

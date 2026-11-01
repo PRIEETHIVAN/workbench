@@ -80,6 +80,8 @@ After the user reported garbled interface symbols, the HTML's mis-decoded UTF-8 
 
 The requested testing-evidence matrix was added under `tests/`. Unit tests now assert readable parser errors for empty/malformed STL and invalid CSV input; the HTTP capture also submits invalid payloads and records their error messages. CTest passed 1/1 and its output was saved in `results/ctest_results.txt`.
 
+After the user reported a null `textContent` error on a repeated geometry load, the CSV handler was corrected to update the existing node-count and temperature-range spans instead of replacing the entire status bar. This preserves the STL triangle counter for subsequent loads. The updated JavaScript passes `node --check` and a DOM-ID/update-contract check.
+
 ### Corrections to earlier draft disclosure
 
 - Three.js and Chart.js are now bundled and served locally. The earlier statement that the frontend needs CDN access is obsolete.

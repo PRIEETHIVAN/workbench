@@ -8,6 +8,7 @@ This matrix summarizes the automated unit and HTTP integration checks. It record
 |---|---|---|---|
 | Geometry | Parse the bundled ASCII STL | Valid parse with 12 facets | Passed: `results/performance_raw.json` records `stl_triangles: 12`; CTest checks the bundled fixture. |
 | Geometry | Submit empty and malformed STL content | Reject input, return a readable error, and keep the server alive | Passed: empty input returns `Empty STL content.`; malformed input returns `ASCII STL must begin with 'solid'.`; both are recorded in `results/performance_raw.json`. |
+| Geometry UI | Preserve metric fields across repeated file loads | Update the node count/range spans without replacing the status bar or deleting the triangle counter | Passed: JavaScript syntax and DOM-update contract checks confirm the parent status bar is no longer overwritten. Refresh the browser to load the fix. |
 | Temperature CSV | Parse bundled temperature data | Valid parse with 30 finite, uniquely identified nodes | Passed: `csv_nodes: 30` in the capture; CTest parses the bundled file. |
 | Temperature CSV | Submit non-finite and malformed values | Reject input with a row/field error | Passed: `NaN` is rejected with `Row 1: non-finite value in temperature_C.`; CTest also checks invalid numeric text. |
 | Thermal FEA | Solve N=10, 20, 40, 80 and check endpoint temperatures | Endpoints equal 100 °C and 20 °C; midpoint error equals `125/N²` °C | Passed in CTest and HTTP capture. Errors: 1.25, 0.3125, 0.078125, and 0.01953125 °C. See `results/fea_N*.csv` and `results/fea_convergence.csv`. |
