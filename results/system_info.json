@@ -1,0 +1,8 @@
+﻿{
+    "cpu":  "AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD",
+    "logical_cores":  16,
+    "physical_cores":  8,
+    "ram_mb":  15654,
+    "compiler":  "GNU 16.2.0",
+    "build_flags":  "-Wall -Wextra -O2 -pthread"
+}

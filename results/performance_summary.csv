@@ -1,0 +1,4 @@
+﻿"requested_workers","actual_workers","case_count","mesh_baseline","seed","warmup_runs","measured_repetitions","median_serial_ms","median_parallel_ms","speedup","efficiency","max_nodal_temperature_difference_C","agreement_ok"
+"1","1","100","48","42","1","5","4.6772","5.2742","0.8868","0.8868","0.0000000000","True"
+"2","2","100","48","42","1","5","4.4960","3.2736","1.3734","0.6867","0.0000000000","True"
+"4","4","100","48","42","1","5","4.6755","2.4598","1.9008","0.4752","0.0000000000","True"

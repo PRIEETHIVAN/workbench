@@ -1,0 +1,21 @@
+﻿{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Packaged Workbench",
+      "type": "shell",
+      "command": "Start-Process -FilePath '${workspaceFolder}\\dist\\UnifiedEngineeringWorkbench\\Launch.exe' -WorkingDirectory '${workspaceFolder}\\dist\\UnifiedEngineeringWorkbench' -WindowStyle Hidden",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "never", "panel": "dedicated" }
+    },
+    {
+      "label": "Test Workbench Core",
+      "type": "shell",
+      "command": "cmake --build build-source --config Release; if ($LASTEXITCODE -eq 0) { ctest --test-dir build-source --output-on-failure }",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": "$msCompile"
+    }
+  ]
+}

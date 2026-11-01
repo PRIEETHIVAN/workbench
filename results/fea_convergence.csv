@@ -1,0 +1,5 @@
+n_elements,max_abs_midpoint_error_C
+10,1.25
+20,0.3125
+40,0.078125
+80,0.01953125

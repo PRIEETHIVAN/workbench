@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unified Engineering Workbench</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <script src="/assets/three-r134.min.js"></script>
+  <script src="/assets/OrbitControls-r134.js"></script>
+  <script src="/assets/chart-4.4.0.umd.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• SIDEBAR â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <nav id="sidebar">
+    <div id="sidebar-header">
+      <div class="app-title">âš™ Eng Workbench</div>
+      <div class="app-subtitle">Unified Analysis Suite v1.0</div>
+    </div>
+
+    <ul id="nav-tabs">
+      <li>
+        <a href="#" class="tab-link active" data-tab="geo-tab">
+          <span class="tab-icon">ðŸ§Š</span>
+          <span class="tab-label">Geometry / CAD</span>
+          <span class="tab-badge">B</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="tab-link" data-tab="fea-tab">
+          <span class="tab-icon">ðŸ”¥</span>
+          <span class="tab-label">Thermal FEA</span>
+          <span class="tab-badge">C</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="tab-link" data-tab="perf-tab">
+          <span class="tab-icon">âš¡</span>
+          <span class="tab-label">Performance</span>
+          <span class="tab-badge">D</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="tab-link" data-tab="hw-tab">
+          <span class="tab-icon">ðŸ”Œ</span>
+          <span class="tab-label">Hardware</span>
+          <span class="tab-badge">E</span>
+        </a>
+      </li>
+      <li>
+        <a href="#" class="tab-link" data-tab="bp-tab">
+          <span class="tab-icon">ðŸ§ </span>
+          <span class="tab-label">Backprop</span>
+          <span class="tab-badge">F</span>
+        </a>
+      </li>
+    </ul>
+
+    <div id="sidebar-footer">
+      <div id="server-status">
+        <div class="dot" id="srv-dot"></div>
+        <span id="srv-text">Checking serverâ€¦</span>
+      </div>
+      <div style="margin-top:6px;color:#555;">localhost:8765</div>
+    </div>
+  </nav>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• MAIN CONTENT â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <main id="main">
+
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+         TAB 1 â€“ GEOMETRY / CAD  (Task B)
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <div class="tab-content active" id="geo-tab">
+
+      <!-- Top controls bar -->
+      <div id="geo-top-bar">
+        <div class="form-group" style="min-width:200px;flex:0 1 220px">
+          <label>ðŸ“„ ASCII STL File</label>
+          <input type="file" id="stl-file" accept=".stl" />
+          <div class="text-dim text-sm" id="stl-file-info" style="margin-top:3px"></div>
+        </div>
+        <div class="form-group" style="min-width:200px;flex:0 1 230px">
+          <label>ðŸŒ¡ Temperature CSV (node_id,x,y,z,TÂ°C)</label>
+          <input type="file" id="csv-file" accept=".csv" />
+          <div class="text-dim text-sm" id="csv-file-info" style="margin-top:3px"></div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:flex-end;flex-wrap:wrap;padding-bottom:1px">
+          <button class="btn btn-primary" id="geo-load-btn">â¬† Load Files</button>
+          <button class="btn btn-secondary" id="geo-fit-btn" title="Fit camera to geometry">âŠ™ Fit View</button>
+          <button class="btn btn-secondary" id="geo-wireframe-btn" title="Toggle wireframe">âŠž Wireframe</button>
+          <button class="btn btn-secondary" id="geo-reset-btn" title="Clear scene">âœ• Clear</button>
+        </div>
+        <div id="geo-loading" style="display:none;margin-left:6px">
+          <div class="spinner" style="width:22px;height:22px;border-width:3px"></div>
+        </div>
+      </div>
+
+      <!-- Alert area -->
+      <div id="geo-alert-area" style="padding:6px 14px 0"></div>
+
+      <!-- 3D viewport -->
+      <div id="three-container">
+        <canvas id="three-canvas"></canvas>
+
+        <!-- Temperature color legend -->
+        <div id="temp-legend" style="display:none">
+          <div class="legend-title">Temperature (Â°C)</div>
+          <div style="overflow:hidden">
+            <div id="legend-gradient"></div>
+            <div class="legend-labels">
+              <span id="legend-max">â€”</span>
+              <span style="margin-top:auto;margin-bottom:auto">â€”</span>
+              <span id="legend-min">â€”</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Node inspector (click to populate) -->
+        <div id="node-inspector">
+          <div class="insp-title">ðŸ“ Node Inspector</div>
+          <table id="inspector-table"></table>
+        </div>
+      </div>
+
+      <!-- Status bar -->
+      <div id="geo-statusbar">
+        <div>Triangles: <span id="stat-tris">â€”</span></div>
+        <div>Temp Nodes: <span id="stat-nodes">â€”</span></div>
+        <div>T-range: <span id="stat-trange">â€”</span></div>
+        <div>Camera: <span id="stat-cam">â€”</span></div>
+        <div style="margin-left:auto;color:#5a8fc0">Drag=Rotate Â· Right-drag=Pan Â· Scroll=Zoom</div>
+      </div>
+    </div><!-- /geo-tab -->
+
+
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+         TAB 2 â€“ THERMAL FEA  (Task C)
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <div class="tab-content" id="fea-tab">
+      <div class="section-title">ðŸ”¥ 1-D Thermal FEA Solver</div>
+      <div class="section-subtitle">Finite-element solution of the heat conduction BVP: âˆ’kÂ·uâ€³ = q, u(0)=Tâ‚€, u(L)=T_L</div>
+
+      <!-- Problem parameters display -->
+      <div class="card">
+        <div class="card-title"><span class="icon">ðŸ“</span>Problem Parameters</div>
+        <div class="params-grid">
+          <div class="param-item"><div class="param-label">Length L</div><div class="param-value">1 m</div></div>
+          <div class="param-item"><div class="param-label">Conductivity k</div><div class="param-value">10 W/mK</div></div>
+          <div class="param-item"><div class="param-label">Heat source q</div><div class="param-value">10 000 W/mÂ³</div></div>
+          <div class="param-item"><div class="param-label">T(0) â€” left BC</div><div class="param-value">100 Â°C</div></div>
+          <div class="param-item"><div class="param-label">T(L) â€” right BC</div><div class="param-value">20 Â°C</div></div>
+        </div>
+      </div>
+
+      <!-- Solver controls -->
+      <div class="card">
+        <div class="card-title"><span class="icon">âš™</span>Solver Configuration</div>
+        <div class="form-row" style="align-items:center;gap:24px">
+          <div>
+            <label>Number of elements N</label>
+            <div class="radio-group" id="fea-n-group">
+              <label><input type="radio" name="fea-n" value="10" checked> 10</label>
+              <label><input type="radio" name="fea-n" value="20"> 20</label>
+              <label><input type="radio" name="fea-n" value="40"> 40</label>
+              <label><input type="radio" name="fea-n" value="80"> 80</label>
+            </div>
+          </div>
+          <div>
+            <label class="check-row">
+              <input type="checkbox" id="fea-run-all"> Run all N values (10, 20, 40, 80) simultaneously
+            </label>
+          </div>
+        </div>
+        <div class="btn-group" style="margin-top:10px">
+          <button class="btn btn-primary btn-lg" id="fea-solve-btn">â–¶ Solve</button>
+          <button class="btn btn-secondary" id="fea-clear-btn">âœ• Clear</button>
+          <div id="fea-loading" style="display:none;margin-left:8px">
+            <div class="spinner" style="width:22px;height:22px;border-width:3px"></div>
+          </div>
+        </div>
+        <div id="fea-alert-area" style="margin-top:10px"></div>
+      </div>
+
+      <!-- Chart -->
+      <div class="chart-wrap">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
+          <strong style="font-size:13px;color:#333">Temperature vs Position</strong>
+          <button class="btn btn-secondary btn-sm" id="fea-export-btn" disabled>â¬‡ Export CSV</button>
+        </div>
+        <canvas id="fea-chart"></canvas>
+      </div>
+
+      <!-- Results table -->
+      <div class="card">
+        <div class="card-title"><span class="icon">ðŸ“Š</span>Convergence Results</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>N (elements)</th>
+              <th>Max Error at midpoints (Â°C)</th>
+              <th>Max Error (relative %)</th>
+              <th>Convergence</th>
+              <th>Export</th>
+            </tr>
+          </thead>
+          <tbody id="fea-results-tbody">
+            <tr><td colspan="5" style="text-align:center;color:#aaa;padding:20px">Solve to see results</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- /fea-tab -->
+
+
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+         TAB 3 â€“ PERFORMANCE  (Task D)
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <div class="tab-content" id="perf-tab">
+      <div class="section-title">âš¡ Parallel Performance Benchmark</div>
+      <div class="section-subtitle">Measure speedup and efficiency of parallel FEA case processing</div>
+
+      <!-- System info -->
+      <div class="card">
+        <div class="card-title"><span class="icon">ðŸ’»</span>System Information</div>
+        <div class="sysinfo-grid" id="sysinfo-grid">
+          <div class="sysinfo-item"><div class="si-label">Logical CPUs</div><div class="si-value" id="si-cpus">â€”</div></div>
+          <div class="sysinfo-item"><div class="si-label">Physical Cores</div><div class="si-value" id="si-hc">â€”</div></div>
+          <div class="sysinfo-item"><div class="si-label">Installed RAM</div><div class="si-value" id="si-ram">â€”</div></div>
+          <div class="sysinfo-item"><div class="si-label">Platform</div><div class="si-value" id="si-os">â€”</div></div>
+          <div class="sysinfo-item"><div class="si-label">Compiler / Flags</div><div class="si-value" id="si-ua" style="font-size:10px;word-break:break-all">â€”</div></div>
+        </div>
+        <div class="alert alert-warn" style="margin-top:12px;margin-bottom:0">
+          <span class="alert-icon">âš </span>
+          <span>On a machine with a single logical CPU, parallel speedup cannot be assessed â€” wall times reflect scheduling overhead only. True multi-core speedup requires â‰¥2 hardware threads.</span>
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <div class="card">
+        <div class="card-title"><span class="icon">âš™</span>Benchmark Configuration</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Case Count (number of FEA cases)</label>
+            <input type="number" id="perf-cases" value="100" min="1" max="500" style="max-width:120px" />
+          </div>
+          <div class="form-group">
+            <label>Mesh Size (elements per case)</label>
+            <input type="number" id="perf-mesh" value="48" min="2" max="200" style="max-width:120px" />
+          </div>
+          <div class="form-group">
+            <label>Max Workers (for manual run)</label>
+            <div class="radio-group" id="perf-workers-group">
+              <label><input type="radio" name="perf-w" value="1" checked> 1</label>
+              <label><input type="radio" name="perf-w" value="2"> 2</label>
+              <label><input type="radio" name="perf-w" value="3"> 3</label>
+              <label><input type="radio" name="perf-w" value="4"> 4</label>
+            </div>
+          </div>
+        </div>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="perf-serial-btn">â–¶ Run Serial (1 worker)</button>
+          <button class="btn btn-success" id="perf-parallel-btn">â–¶â–¶ Run Parallel</button>
+          <button class="btn btn-warning" id="perf-all-btn">âš¡ Run All (1â†’4 workers)</button>
+          <button class="btn btn-secondary" id="perf-clear-btn">âœ• Clear</button>
+        </div>
+        <div id="perf-progress-wrap" style="margin-top:12px;display:none">
+          <div class="progress-bar-wrap"><div class="progress-bar-fill" id="perf-progress-fill" style="width:0%"></div></div>
+          <div id="perf-progress-label" class="text-sm text-dim">Runningâ€¦</div>
+        </div>
+        <div id="perf-alert-area" style="margin-top:8px"></div>
+      </div>
+
+      <!-- Results table -->
+      <div class="card">
+        <div class="card-title"><span class="icon">ðŸ“Š</span>Benchmark Results</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Workers</th>
+              <th class="num">Wall-time (ms)</th>
+              <th class="num">Speedup S</th>
+              <th class="num">Efficiency E = S/W</th>
+              <th>Assessment</th>
+            </tr>
+          </thead>
+          <tbody id="perf-results-tbody">
+            <tr><td colspan="5" style="text-align:center;color:#aaa;padding:20px">Run a benchmark to see results</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Charts row -->
+      <div class="perf-charts-row">
+        <div class="chart-wrap">
+          <strong style="font-size:12px;color:#555;display:block;margin-bottom:8px">Wall-time vs Workers</strong>
+          <canvas id="perf-time-chart"></canvas>
+        </div>
+        <div class="chart-wrap">
+          <strong style="font-size:12px;color:#555;display:block;margin-bottom:8px">Speedup vs Workers</strong>
+          <canvas id="perf-speedup-chart"></canvas>
+        </div>
+      </div>
+    </div><!-- /perf-tab -->
+
+
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+         TAB 4 â€“ HARDWARE  (Task E)
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <div class="tab-content" id="hw-tab">
+      <div class="section-title">ðŸ”Œ Embedded Hardware Interface</div>
+      <div class="section-subtitle">Device discovery, connection management, and telemetry for MCU / FPGA / JTAG targets</div>
+
+      <!-- Safety notice -->
+      <div class="safety-notice">
+        <h4>âš  Safety Notice â€” Read Before Connecting</h4>
+        <ul>
+          <li>Verify target board power supply voltage before connecting (3.3 V or 5 V â€” do NOT mix).</li>
+          <li>Never connect/disconnect JTAG while the target is powered in reset-protected state.</li>
+          <li>Ensure UART baud rate matches firmware configuration to avoid data corruption.</li>
+          <li>SPI clock polarity/phase (CPOL/CPHA) must match the FPGA bitstream â€” check datasheet.</li>
+          <li>Disconnect all devices before flashing new firmware to the FPGA.</li>
+        </ul>
+      </div>
+
+      <!-- Discover -->
+      <div class="card">
+        <div class="card-title"><span class="icon">ðŸ”</span>Device Discovery</div>
+        <div class="btn-group">
+          <button class="btn btn-primary" id="hw-discover-btn">ðŸ” Discover Devices</button>
+          <button class="btn btn-secondary" id="hw-refresh-btn">â†º Refresh</button>
+          <div id="hw-loading" style="display:none;margin-left:8px">
+            <div class="spinner" style="width:22px;height:22px;border-width:3px"></div>
+          </div>
+        </div>
+        <div id="hw-alert-area" style="margin-top:10px"></div>
+      </div>
+
+      <!-- Device list -->
+      <div id="hw-device-list">
+        <div style="color:#aaa;font-size:13px;padding:10px 0">Click "Discover Devices" to enumerate connected hardware.</div>
+      </div>
+
+      <!-- Block diagram -->
+      <div class="card" style="margin-top:8px">
+        <div class="card-title"><span class="icon">ðŸ“</span>System Block Diagram</div>
+        <div id="block-diagram-wrap">
+          <svg width="640" height="200" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" style="font-family:Segoe UI,Arial,sans-serif">
+            <!-- Host PC -->
+            <rect x="240" y="70" width="120" height="60" rx="8" fill="#0f3460" stroke="#3498db" stroke-width="2"/>
+            <text x="300" y="97" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">Host PC</text>
+            <text x="300" y="113" text-anchor="middle" fill="#a0c4ff" font-size="10">localhost:8765</text>
+
+            <!-- MCU -->
+            <rect x="40" y="70" width="110" height="60" rx="8" fill="#16213e" stroke="#2ecc71" stroke-width="2"/>
+            <text x="95" y="95" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">ðŸ–¥ MCU</text>
+            <text x="95" y="112" text-anchor="middle" fill="#a0ffc0" font-size="10">STM32 / AVR</text>
+
+            <!-- Arrow MCU â†” Host (UART) -->
+            <line x1="150" y1="100" x2="240" y2="100" stroke="#2ecc71" stroke-width="2" marker-end="url(#arr-g)" marker-start="url(#arr-g)"/>
+            <text x="195" y="91" text-anchor="middle" fill="#2ecc71" font-size="11" font-weight="600">UART</text>
+            <text x="195" y="115" text-anchor="middle" fill="#888" font-size="10">115200 baud</text>
+
+            <!-- FPGA -->
+            <rect x="490" y="70" width="110" height="60" rx="8" fill="#16213e" stroke="#f39c12" stroke-width="2"/>
+            <text x="545" y="95" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">âš¡ FPGA</text>
+            <text x="545" y="112" text-anchor="middle" fill="#ffe080" font-size="10">Xilinx / Intel</text>
+
+            <!-- Arrow Host â†” FPGA (SPI) -->
+            <line x1="360" y1="100" x2="490" y2="100" stroke="#f39c12" stroke-width="2" marker-end="url(#arr-y)" marker-start="url(#arr-y)"/>
+            <text x="425" y="91" text-anchor="middle" fill="#f39c12" font-size="11" font-weight="600">SPI</text>
+            <text x="425" y="115" text-anchor="middle" fill="#888" font-size="10">10 MHz, Mode 0</text>
+
+            <!-- JTAG Adapter -->
+            <rect x="240" y="155" width="120" height="36" rx="6" fill="#16213e" stroke="#e94560" stroke-width="2"/>
+            <text x="300" y="177" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">ðŸ› JTAG Adapter</text>
+            <line x1="300" y1="130" x2="300" y2="155" stroke="#e94560" stroke-width="2" stroke-dasharray="5,3"/>
+            <text x="310" y="147" fill="#e94560" font-size="10">Debug</text>
+
+            <!-- Arrowhead markers -->
+            <defs>
+              <marker id="arr-g" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="#2ecc71"/>
+              </marker>
+              <marker id="arr-y" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+                <path d="M0,0 L8,4 L0,8 Z" fill="#f39c12"/>
+              </marker>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Pin/voltage table -->
+      <div class="card">
+        <div class="card-title"><span class="icon">ðŸ“Œ</span>Pin &amp; Voltage Reference Table</div>
+        <table class="data-table">
+          <thead>
+            <tr><th>Device</th><th>Interface</th><th>Voltage</th><th>Pins</th><th>Notes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>MCU (STM32)</td><td>UART TX/RX</td><td>3.3 V</td><td>PA9 (TX), PA10 (RX)</td><td>115200 8N1, no hardware flow control</td></tr>
+            <tr><td>MCU (STM32)</td><td>GPIO</td><td>3.3 V</td><td>PB0â€“PB7</td><td>Push-pull, max 25 mA per pin</td></tr>
+            <tr><td>FPGA (Xilinx)</td><td>SPI MOSI/MISO</td><td>3.3 V</td><td>IO_L1 (MOSI), IO_L2 (MISO), IO_L3 (SCK), IO_L4 (CS)</td><td>CPOL=0, CPHA=0, max 10 MHz</td></tr>
+            <tr><td>FPGA (Xilinx)</td><td>Power</td><td>1.0 V / 1.8 V / 3.3 V</td><td>VCCINT / VCCO / VCC</td><td>Sequence: VCCINT â†’ VCCO â†’ VCC</td></tr>
+            <tr><td>JTAG Adapter</td><td>JTAG</td><td>3.3 V</td><td>TCK, TMS, TDI, TDO, GND</td><td>Max cable length 30 cm; use 22 Î© series resistors</td></tr>
+            <tr><td>JTAG Adapter</td><td>USB (Host)</td><td>5 V</td><td>USB-B connector</td><td>Bus-powered; 500 mA max from host</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div><!-- /hw-tab -->
+
+
+    <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+         TAB 5 â€“ BACKPROP  (Task F)
+    â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+    <div class="tab-content" id="bp-tab">
+      <div id="bp-error" class="alert alert-error" style="display:none;margin:8px 0"></div>
+      <div class="section-title">ðŸ§  Backpropagation Demonstrator</div>
+      <div class="section-subtitle">
+        Network: x=1 (fixed) â†’ z=wx+b â†’ h=tanh(z) â†’ Å·=vh+c â†’ loss=Â½(Å·âˆ’1)Â²
+      </div>
+
+      <!-- Parameters -->
+      <div class="card">
+        <div class="card-title"><span class="icon">ðŸŽ›</span>Network Parameters</div>
+        <div class="form-row">
+          <div class="form-group"><label>w (weight 1)</label><input type="number" id="bp-w" value="0.5" step="0.01" style="max-width:100px"/></div>
+          <div class="form-group"><label>b (bias 1)</label><input type="number" id="bp-b" value="0" step="0.01" style="max-width:100px"/></div>
+          <div class="form-group"><label>v (weight 2)</label><input type="number" id="bp-v" value="1" step="0.01" style="max-width:100px"/></div>
+          <div class="form-group"><label>c (bias 2)</label><input type="number" id="bp-c" value="0" step="0.01" style="max-width:100px"/></div>
+          <div class="form-group"><label>Learning rate Î·</label><input type="number" id="bp-lr" value="0.1" step="0.01" min="0.0001" style="max-width:100px"/></div>
+          <div class="form-group"><label>Training steps</label><input type="number" id="bp-steps" value="100" min="1" max="2000" style="max-width:100px"/></div>
+        </div>
+        <div class="btn-group" style="margin-top:8px">
+          <button class="btn btn-secondary" id="bp-reset-btn">â†º Reset Params</button>
+        </div>
+      </div>
+
+      <!-- Forward pass -->
+      <div class="card">
+        <div class="card-title"><span class="icon">âž¡</span>Forward Pass</div>
+        <div class="btn-group" style="margin-bottom:12px">
+          <button class="btn btn-primary" id="bp-forward-btn">â–¶ Run Forward Pass</button>
+        </div>
+        <div id="bp-forward-display" style="display:none">
+          <div class="math-block" id="bp-forward-math"></div>
+        </div>
+      </div>
+
+      <!-- Backprop -->
+      <div class="card">
+        <div class="card-title"><span class="icon">â¬…</span>Backward Pass (Backpropagation)</div>
+        <div class="btn-group" style="margin-bottom:12px">
+          <button class="btn btn-primary" id="bp-backward-btn">â¬… Run Backprop</button>
+        </div>
+        <div id="bp-backward-display" style="display:none">
+          <div class="math-block" id="bp-backward-math"></div>
+          <div style="margin-top:12px">
+            <strong style="font-size:12.5px;color:#333">Gradient Descent Update Equations:</strong>
+            <div class="math-block" id="bp-update-math" style="margin-top:6px"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gradient check -->
+      <div class="card">
+        <div class="card-title"><span class="icon">âœ…</span>Gradient Check (Numeric vs Analytic)</div>
+        <div class="btn-group" style="margin-bottom:12px">
+          <button class="btn btn-warning" id="bp-gradcheck-btn">ðŸ”Ž Check Gradients</button>
+        </div>
+        <div id="bp-gradcheck-display" style="display:none">
+          <table class="data-table">
+            <thead>
+              <tr><th>Parameter</th><th class="num">Analytic Gradient</th><th class="num">Numeric Gradient</th><th class="num">|Diff|</th><th>Pass / Fail</th></tr>
+            </thead>
+            <tbody id="bp-gradcheck-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Training -->
+      <div class="card">
+        <div class="card-title"><span class="icon">ðŸ“‰</span>Training Loop</div>
+        <div class="btn-group" style="margin-bottom:12px">
+          <button class="btn btn-success" id="bp-train-btn">ðŸš€ Train (N Steps)</button>
+          <button class="btn btn-secondary" id="bp-train-clear-btn">âœ• Clear Chart</button>
+        </div>
+        <div id="bp-train-info" style="margin-bottom:10px;font-size:12.5px;color:#555;display:none">
+          Step <span id="bp-train-step">0</span> Â· Loss = <span id="bp-train-loss-val" class="mono">â€”</span>
+          Â· w=<span id="bp-cur-w">â€”</span>, b=<span id="bp-cur-b">â€”</span>, v=<span id="bp-cur-v">â€”</span>, c=<span id="bp-cur-c">â€”</span>
+        </div>
+        <div class="chart-wrap" style="margin-bottom:0">
+          <canvas id="bp-loss-chart"></canvas>
+        </div>
+      </div>
+    </div><!-- /bp-tab -->
+
+  </main><!-- /main -->
+</div><!-- /app -->
+
+<script src="app.js"></script>
+</body>
+</html>

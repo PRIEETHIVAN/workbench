@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="560" viewBox="0 0 820 560">
+<rect width="100%" height="100%" fill="#fff"/>
+<style>text{font-family:Arial,sans-serif;fill:#202733}.grid{stroke:#dce1e7}.axis{stroke:#39424e;stroke-width:2}.tick{font-size:12px}.legend{font-size:14px}.title{font-size:22px;font-weight:bold}.label{font-size:15px}</style>
+<text class="title" x="410.0" y="32" text-anchor="middle">FE Mesh Convergence: Maximum Midpoint Error</text>
+<line class="grid" x1="95" y1="445.0" x2="750" y2="445.0"/>
+<text class="tick" x="85" y="449.0" text-anchor="end">0.01</text>
+<line class="grid" x1="95" y1="282.0295038714649" x2="750" y2="282.0295038714649"/>
+<text class="tick" x="85" y="286.0295038714649" text-anchor="end">0.1</text>
+<line class="grid" x1="95" y1="119.0590077429298" x2="750" y2="119.0590077429298"/>
+<text class="tick" x="85" y="123.0590077429298" text-anchor="end">1</text>
+<line class="grid" x1="152.86806371309035" y1="70" x2="152.86806371309035" y2="445"/>
+<text class="tick" x="152.86806371309035" y="465" text-anchor="middle">10</text>
+<line class="grid" x1="332.6226879043635" y1="70" x2="332.6226879043635" y2="445"/>
+<text class="tick" x="332.6226879043635" y="465" text-anchor="middle">20</text>
+<line class="grid" x1="512.3773120956364" y1="70" x2="512.3773120956364" y2="445"/>
+<text class="tick" x="512.3773120956364" y="465" text-anchor="middle">40</text>
+<line class="grid" x1="692.1319362869096" y1="70" x2="692.1319362869096" y2="445"/>
+<text class="tick" x="692.1319362869096" y="465" text-anchor="middle">80</text>
+<line class="axis" x1="95" y1="445" x2="750" y2="445"/>
+<line class="axis" x1="95" y1="70" x2="95" y2="445"/>
+<text class="label" x="422.5" y="500" text-anchor="middle">Uniform elements N (log scale)</text>
+<text class="label" transform="translate(25 257.5) rotate(-90)" text-anchor="middle">Maximum midpoint |T_FE−T_exact| (°C, log scale)</text>
+<polyline fill="none" stroke="#168aad" stroke-width="3" points="152.87,103.27 332.62,201.38 512.38,299.50 692.13,397.62"/>
+<circle cx="152.86806371309035" cy="103.26553484318407" r="5" fill="#e4572e"/>
+<text class="tick" x="160.86806371309035" y="95.26553484318407">1.25 °C</text>
+<circle cx="332.6226879043635" cy="201.3835503290436" r="5" fill="#e4572e"/>
+<text class="tick" x="340.6226879043635" y="193.3835503290436">0.3125 °C</text>
+<circle cx="512.3773120956364" cy="299.5015658149032" r="5" fill="#e4572e"/>
+<text class="tick" x="520.3773120956364" y="291.5015658149032">0.078125 °C</text>
+<circle cx="692.1319362869096" cy="397.6195813007628" r="5" fill="#e4572e"/>
+<text class="tick" x="700.1319362869096" y="389.6195813007628">0.0195312 °C</text>
+</svg>

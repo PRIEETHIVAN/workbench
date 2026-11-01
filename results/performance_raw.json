@@ -1,0 +1,2953 @@
+﻿{
+    "captured_at":  "2026-11-02T02:06:28+05:30",
+    "launch_to_ready_ms":  956.7,
+    "system":  {
+                   "cpu":  "AMD64 Family 25 Model 116 Stepping 1, AuthenticAMD",
+                   "logical_cores":  16,
+                   "physical_cores":  8,
+                   "ram_mb":  15654,
+                   "compiler":  "GNU 16.2.0",
+                   "build_flags":  "-Wall -Wextra -O2 -pthread"
+               },
+    "device_count":  3,
+    "mcu_connect_success":  true,
+    "telemetry_success":  true,
+    "jtag_first_attempt_success":  false,
+    "jtag_retry_success":  true,
+    "stl_triangles":  12,
+    "csv_nodes":  30,
+    "backprop":  {
+                     "initial_params":  {
+                                            "w":  0.50000000,
+                                            "b":  0.00000000,
+                                            "v":  1.00000000,
+                                            "c":  0.00000000
+                                        },
+                     "forward":  {
+                                     "z":  0.50000000,
+                                     "h":  0.46211716,
+                                     "y_hat":  0.46211716,
+                                     "loss":  1.18254182
+                                 },
+                     "gradients":  {
+                                       "dJ_dw":  -1.20946448,
+                                       "dJ_db":  -1.20946448,
+                                       "dJ_dv":  -0.71068205,
+                                       "dJ_dc":  -1.53788284
+                                   },
+                     "grad_check":  [
+                                        {
+                                            "param":  "w",
+                                            "analytic":  -1.20946448,
+                                            "numeric":  -1.20946448,
+                                            "abs_diff":  0.00000000
+                                        },
+                                        {
+                                            "param":  "b",
+                                            "analytic":  -1.20946448,
+                                            "numeric":  -1.20946448,
+                                            "abs_diff":  0.00000000
+                                        },
+                                        {
+                                            "param":  "v",
+                                            "analytic":  -0.71068205,
+                                            "numeric":  -0.71068205,
+                                            "abs_diff":  0.00000000
+                                        },
+                                        {
+                                            "param":  "c",
+                                            "analytic":  -1.53788284,
+                                            "numeric":  -1.53788284,
+                                            "abs_diff":  0.00000000
+                                        }
+                                    ],
+                     "loss_history":  [
+                                          {
+                                              "step":  0,
+                                              "loss":  1.18254182
+                                          },
+                                          {
+                                              "step":  1,
+                                              "loss":  0.68577377
+                                          },
+                                          {
+                                              "step":  2,
+                                              "loss":  0.41667962
+                                          },
+                                          {
+                                              "step":  3,
+                                              "loss":  0.25805100
+                                          },
+                                          {
+                                              "step":  4,
+                                              "loss":  0.16128842
+                                          },
+                                          {
+                                              "step":  5,
+                                              "loss":  0.10132043
+                                          },
+                                          {
+                                              "step":  6,
+                                              "loss":  0.06384348
+                                          },
+                                          {
+                                              "step":  7,
+                                              "loss":  0.04030805
+                                          },
+                                          {
+                                              "step":  8,
+                                              "loss":  0.02548280
+                                          },
+                                          {
+                                              "step":  9,
+                                              "loss":  0.01612540
+                                          },
+                                          {
+                                              "step":  10,
+                                              "loss":  0.01021102
+                                          },
+                                          {
+                                              "step":  11,
+                                              "loss":  0.00646912
+                                          },
+                                          {
+                                              "step":  12,
+                                              "loss":  0.00410001
+                                          },
+                                          {
+                                              "step":  13,
+                                              "loss":  0.00259926
+                                          },
+                                          {
+                                              "step":  14,
+                                              "loss":  0.00164819
+                                          },
+                                          {
+                                              "step":  15,
+                                              "loss":  0.00104530
+                                          },
+                                          {
+                                              "step":  16,
+                                              "loss":  0.00066303
+                                          },
+                                          {
+                                              "step":  17,
+                                              "loss":  0.00042060
+                                          },
+                                          {
+                                              "step":  18,
+                                              "loss":  0.00026683
+                                          },
+                                          {
+                                              "step":  19,
+                                              "loss":  0.00016929
+                                          },
+                                          {
+                                              "step":  20,
+                                              "loss":  0.00010741
+                                          },
+                                          {
+                                              "step":  21,
+                                              "loss":  0.00006815
+                                          },
+                                          {
+                                              "step":  22,
+                                              "loss":  0.00004325
+                                          },
+                                          {
+                                              "step":  23,
+                                              "loss":  0.00002744
+                                          },
+                                          {
+                                              "step":  24,
+                                              "loss":  0.00001741
+                                          },
+                                          {
+                                              "step":  25,
+                                              "loss":  0.00001105
+                                          },
+                                          {
+                                              "step":  26,
+                                              "loss":  0.00000701
+                                          },
+                                          {
+                                              "step":  27,
+                                              "loss":  0.00000445
+                                          },
+                                          {
+                                              "step":  28,
+                                              "loss":  0.00000282
+                                          },
+                                          {
+                                              "step":  29,
+                                              "loss":  0.00000179
+                                          },
+                                          {
+                                              "step":  30,
+                                              "loss":  0.00000114
+                                          },
+                                          {
+                                              "step":  31,
+                                              "loss":  0.00000072
+                                          },
+                                          {
+                                              "step":  32,
+                                              "loss":  0.00000046
+                                          },
+                                          {
+                                              "step":  33,
+                                              "loss":  0.00000029
+                                          },
+                                          {
+                                              "step":  34,
+                                              "loss":  0.00000018
+                                          },
+                                          {
+                                              "step":  35,
+                                              "loss":  0.00000012
+                                          },
+                                          {
+                                              "step":  36,
+                                              "loss":  0.00000007
+                                          },
+                                          {
+                                              "step":  37,
+                                              "loss":  0.00000005
+                                          },
+                                          {
+                                              "step":  38,
+                                              "loss":  0.00000003
+                                          },
+                                          {
+                                              "step":  39,
+                                              "loss":  0.00000002
+                                          },
+                                          {
+                                              "step":  40,
+                                              "loss":  0.00000001
+                                          },
+                                          {
+                                              "step":  41,
+                                              "loss":  0.00000001
+                                          },
+                                          {
+                                              "step":  42,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  43,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  44,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  45,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  46,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  47,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  48,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  49,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  50,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  51,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  52,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  53,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  54,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  55,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  56,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  57,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  58,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  59,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  60,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  61,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  62,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  63,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  64,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  65,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  66,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  67,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  68,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  69,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  70,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  71,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  72,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  73,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  74,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  75,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  76,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  77,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  78,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  79,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  80,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  81,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  82,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  83,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  84,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  85,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  86,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  87,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  88,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  89,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  90,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  91,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  92,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  93,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  94,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  95,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  96,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  97,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  98,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  99,
+                                              "loss":  0.00000000
+                                          },
+                                          {
+                                              "step":  100,
+                                              "loss":  0.00000000
+                                          }
+                                      ]
+                 },
+    "fea":  [
+                {
+                    "n_elements":  10,
+                    "max_abs_midpoint_error_C":  1.25000000
+                },
+                {
+                    "n_elements":  20,
+                    "max_abs_midpoint_error_C":  0.31250000
+                },
+                {
+                    "n_elements":  40,
+                    "max_abs_midpoint_error_C":  0.07812500
+                },
+                {
+                    "n_elements":  80,
+                    "max_abs_midpoint_error_C":  0.01953125
+                }
+            ],
+    "workload":  {
+                     "mesh_baseline":  48,
+                     "case_count":  100,
+                     "seed":  42
+                 },
+    "benchmarks":  [
+                       {
+                           "requested_workers":  1,
+                           "actual_workers":  1,
+                           "case_count":  100,
+                           "mesh_baseline":  48,
+                           "seed":  42,
+                           "warmup_runs":  1,
+                           "measured_repetitions":  5,
+                           "median_serial_ms":  4.6772,
+                           "median_parallel_ms":  5.2742,
+                           "speedup":  0.8868,
+                           "efficiency":  0.8868,
+                           "max_nodal_temperature_difference_C":  0.0000000000,
+                           "agreement_ok":  true,
+                           "serial_errors":  [
+                                                 {
+                                                     "case_id":  0,
+                                                     "max_error":  0.06205004
+                                                 },
+                                                 {
+                                                     "case_id":  1,
+                                                     "max_error":  0.00903642
+                                                 },
+                                                 {
+                                                     "case_id":  2,
+                                                     "max_error":  0.09878202
+                                                 },
+                                                 {
+                                                     "case_id":  3,
+                                                     "max_error":  0.04595348
+                                                 },
+                                                 {
+                                                     "case_id":  4,
+                                                     "max_error":  0.17032551
+                                                 },
+                                                 {
+                                                     "case_id":  5,
+                                                     "max_error":  0.02022858
+                                                 },
+                                                 {
+                                                     "case_id":  6,
+                                                     "max_error":  0.01375618
+                                                 },
+                                                 {
+                                                     "case_id":  7,
+                                                     "max_error":  0.04926677
+                                                 },
+                                                 {
+                                                     "case_id":  8,
+                                                     "max_error":  0.03294799
+                                                 },
+                                                 {
+                                                     "case_id":  9,
+                                                     "max_error":  0.03634557
+                                                 },
+                                                 {
+                                                     "case_id":  10,
+                                                     "max_error":  0.06164599
+                                                 },
+                                                 {
+                                                     "case_id":  11,
+                                                     "max_error":  0.15030036
+                                                 },
+                                                 {
+                                                     "case_id":  12,
+                                                     "max_error":  0.04358573
+                                                 },
+                                                 {
+                                                     "case_id":  13,
+                                                     "max_error":  0.09831332
+                                                 },
+                                                 {
+                                                     "case_id":  14,
+                                                     "max_error":  0.02293898
+                                                 },
+                                                 {
+                                                     "case_id":  15,
+                                                     "max_error":  0.00674201
+                                                 },
+                                                 {
+                                                     "case_id":  16,
+                                                     "max_error":  0.52285020
+                                                 },
+                                                 {
+                                                     "case_id":  17,
+                                                     "max_error":  0.05943379
+                                                 },
+                                                 {
+                                                     "case_id":  18,
+                                                     "max_error":  0.02473691
+                                                 },
+                                                 {
+                                                     "case_id":  19,
+                                                     "max_error":  0.19517054
+                                                 },
+                                                 {
+                                                     "case_id":  20,
+                                                     "max_error":  0.23156939
+                                                 },
+                                                 {
+                                                     "case_id":  21,
+                                                     "max_error":  0.04125114
+                                                 },
+                                                 {
+                                                     "case_id":  22,
+                                                     "max_error":  0.00748059
+                                                 },
+                                                 {
+                                                     "case_id":  23,
+                                                     "max_error":  0.09201742
+                                                 },
+                                                 {
+                                                     "case_id":  24,
+                                                     "max_error":  0.01916624
+                                                 },
+                                                 {
+                                                     "case_id":  25,
+                                                     "max_error":  0.19094138
+                                                 },
+                                                 {
+                                                     "case_id":  26,
+                                                     "max_error":  0.01451117
+                                                 },
+                                                 {
+                                                     "case_id":  27,
+                                                     "max_error":  0.04910965
+                                                 },
+                                                 {
+                                                     "case_id":  28,
+                                                     "max_error":  0.04930622
+                                                 },
+                                                 {
+                                                     "case_id":  29,
+                                                     "max_error":  0.11252197
+                                                 },
+                                                 {
+                                                     "case_id":  30,
+                                                     "max_error":  0.00966860
+                                                 },
+                                                 {
+                                                     "case_id":  31,
+                                                     "max_error":  0.09620972
+                                                 },
+                                                 {
+                                                     "case_id":  32,
+                                                     "max_error":  0.15623548
+                                                 },
+                                                 {
+                                                     "case_id":  33,
+                                                     "max_error":  0.79438214
+                                                 },
+                                                 {
+                                                     "case_id":  34,
+                                                     "max_error":  0.21296092
+                                                 },
+                                                 {
+                                                     "case_id":  35,
+                                                     "max_error":  0.01730286
+                                                 },
+                                                 {
+                                                     "case_id":  36,
+                                                     "max_error":  0.21065393
+                                                 },
+                                                 {
+                                                     "case_id":  37,
+                                                     "max_error":  0.03511376
+                                                 },
+                                                 {
+                                                     "case_id":  38,
+                                                     "max_error":  0.03894021
+                                                 },
+                                                 {
+                                                     "case_id":  39,
+                                                     "max_error":  0.07652329
+                                                 },
+                                                 {
+                                                     "case_id":  40,
+                                                     "max_error":  0.27823856
+                                                 },
+                                                 {
+                                                     "case_id":  41,
+                                                     "max_error":  0.11077124
+                                                 },
+                                                 {
+                                                     "case_id":  42,
+                                                     "max_error":  0.02348332
+                                                 },
+                                                 {
+                                                     "case_id":  43,
+                                                     "max_error":  0.03567068
+                                                 },
+                                                 {
+                                                     "case_id":  44,
+                                                     "max_error":  0.14634196
+                                                 },
+                                                 {
+                                                     "case_id":  45,
+                                                     "max_error":  0.13077423
+                                                 },
+                                                 {
+                                                     "case_id":  46,
+                                                     "max_error":  0.17199315
+                                                 },
+                                                 {
+                                                     "case_id":  47,
+                                                     "max_error":  0.10554341
+                                                 },
+                                                 {
+                                                     "case_id":  48,
+                                                     "max_error":  0.01432984
+                                                 },
+                                                 {
+                                                     "case_id":  49,
+                                                     "max_error":  0.10290109
+                                                 },
+                                                 {
+                                                     "case_id":  50,
+                                                     "max_error":  0.10182278
+                                                 },
+                                                 {
+                                                     "case_id":  51,
+                                                     "max_error":  0.05432205
+                                                 },
+                                                 {
+                                                     "case_id":  52,
+                                                     "max_error":  0.10595536
+                                                 },
+                                                 {
+                                                     "case_id":  53,
+                                                     "max_error":  0.10634443
+                                                 },
+                                                 {
+                                                     "case_id":  54,
+                                                     "max_error":  0.13209640
+                                                 },
+                                                 {
+                                                     "case_id":  55,
+                                                     "max_error":  0.01453862
+                                                 },
+                                                 {
+                                                     "case_id":  56,
+                                                     "max_error":  0.07481701
+                                                 },
+                                                 {
+                                                     "case_id":  57,
+                                                     "max_error":  0.11403793
+                                                 },
+                                                 {
+                                                     "case_id":  58,
+                                                     "max_error":  0.02616066
+                                                 },
+                                                 {
+                                                     "case_id":  59,
+                                                     "max_error":  0.00825533
+                                                 },
+                                                 {
+                                                     "case_id":  60,
+                                                     "max_error":  0.01701029
+                                                 },
+                                                 {
+                                                     "case_id":  61,
+                                                     "max_error":  0.03671883
+                                                 },
+                                                 {
+                                                     "case_id":  62,
+                                                     "max_error":  0.09928237
+                                                 },
+                                                 {
+                                                     "case_id":  63,
+                                                     "max_error":  0.01875188
+                                                 },
+                                                 {
+                                                     "case_id":  64,
+                                                     "max_error":  0.09928719
+                                                 },
+                                                 {
+                                                     "case_id":  65,
+                                                     "max_error":  0.05322567
+                                                 },
+                                                 {
+                                                     "case_id":  66,
+                                                     "max_error":  0.04176423
+                                                 },
+                                                 {
+                                                     "case_id":  67,
+                                                     "max_error":  0.11592342
+                                                 },
+                                                 {
+                                                     "case_id":  68,
+                                                     "max_error":  0.03883755
+                                                 },
+                                                 {
+                                                     "case_id":  69,
+                                                     "max_error":  0.18119992
+                                                 },
+                                                 {
+                                                     "case_id":  70,
+                                                     "max_error":  0.00894008
+                                                 },
+                                                 {
+                                                     "case_id":  71,
+                                                     "max_error":  0.03279012
+                                                 },
+                                                 {
+                                                     "case_id":  72,
+                                                     "max_error":  0.01604930
+                                                 },
+                                                 {
+                                                     "case_id":  73,
+                                                     "max_error":  0.03827010
+                                                 },
+                                                 {
+                                                     "case_id":  74,
+                                                     "max_error":  0.08258125
+                                                 },
+                                                 {
+                                                     "case_id":  75,
+                                                     "max_error":  0.04649657
+                                                 },
+                                                 {
+                                                     "case_id":  76,
+                                                     "max_error":  0.02182734
+                                                 },
+                                                 {
+                                                     "case_id":  77,
+                                                     "max_error":  0.36569858
+                                                 },
+                                                 {
+                                                     "case_id":  78,
+                                                     "max_error":  0.25326656
+                                                 },
+                                                 {
+                                                     "case_id":  79,
+                                                     "max_error":  0.03530910
+                                                 },
+                                                 {
+                                                     "case_id":  80,
+                                                     "max_error":  0.02001079
+                                                 },
+                                                 {
+                                                     "case_id":  81,
+                                                     "max_error":  0.06552523
+                                                 },
+                                                 {
+                                                     "case_id":  82,
+                                                     "max_error":  0.00905363
+                                                 },
+                                                 {
+                                                     "case_id":  83,
+                                                     "max_error":  0.01560001
+                                                 },
+                                                 {
+                                                     "case_id":  84,
+                                                     "max_error":  0.02863517
+                                                 },
+                                                 {
+                                                     "case_id":  85,
+                                                     "max_error":  0.58091066
+                                                 },
+                                                 {
+                                                     "case_id":  86,
+                                                     "max_error":  0.05408738
+                                                 },
+                                                 {
+                                                     "case_id":  87,
+                                                     "max_error":  0.01467482
+                                                 },
+                                                 {
+                                                     "case_id":  88,
+                                                     "max_error":  0.20795162
+                                                 },
+                                                 {
+                                                     "case_id":  89,
+                                                     "max_error":  0.10168919
+                                                 },
+                                                 {
+                                                     "case_id":  90,
+                                                     "max_error":  0.05215156
+                                                 },
+                                                 {
+                                                     "case_id":  91,
+                                                     "max_error":  0.03002697
+                                                 },
+                                                 {
+                                                     "case_id":  92,
+                                                     "max_error":  0.07161697
+                                                 },
+                                                 {
+                                                     "case_id":  93,
+                                                     "max_error":  0.13854493
+                                                 },
+                                                 {
+                                                     "case_id":  94,
+                                                     "max_error":  0.04036932
+                                                 },
+                                                 {
+                                                     "case_id":  95,
+                                                     "max_error":  0.02481901
+                                                 },
+                                                 {
+                                                     "case_id":  96,
+                                                     "max_error":  0.03304830
+                                                 },
+                                                 {
+                                                     "case_id":  97,
+                                                     "max_error":  0.10680710
+                                                 },
+                                                 {
+                                                     "case_id":  98,
+                                                     "max_error":  0.10505080
+                                                 },
+                                                 {
+                                                     "case_id":  99,
+                                                     "max_error":  0.02169049
+                                                 }
+                                             ],
+                           "parallel_errors":  [
+                                                   {
+                                                       "case_id":  0,
+                                                       "max_error":  0.06205004
+                                                   },
+                                                   {
+                                                       "case_id":  1,
+                                                       "max_error":  0.00903642
+                                                   },
+                                                   {
+                                                       "case_id":  2,
+                                                       "max_error":  0.09878202
+                                                   },
+                                                   {
+                                                       "case_id":  3,
+                                                       "max_error":  0.04595348
+                                                   },
+                                                   {
+                                                       "case_id":  4,
+                                                       "max_error":  0.17032551
+                                                   },
+                                                   {
+                                                       "case_id":  5,
+                                                       "max_error":  0.02022858
+                                                   },
+                                                   {
+                                                       "case_id":  6,
+                                                       "max_error":  0.01375618
+                                                   },
+                                                   {
+                                                       "case_id":  7,
+                                                       "max_error":  0.04926677
+                                                   },
+                                                   {
+                                                       "case_id":  8,
+                                                       "max_error":  0.03294799
+                                                   },
+                                                   {
+                                                       "case_id":  9,
+                                                       "max_error":  0.03634557
+                                                   },
+                                                   {
+                                                       "case_id":  10,
+                                                       "max_error":  0.06164599
+                                                   },
+                                                   {
+                                                       "case_id":  11,
+                                                       "max_error":  0.15030036
+                                                   },
+                                                   {
+                                                       "case_id":  12,
+                                                       "max_error":  0.04358573
+                                                   },
+                                                   {
+                                                       "case_id":  13,
+                                                       "max_error":  0.09831332
+                                                   },
+                                                   {
+                                                       "case_id":  14,
+                                                       "max_error":  0.02293898
+                                                   },
+                                                   {
+                                                       "case_id":  15,
+                                                       "max_error":  0.00674201
+                                                   },
+                                                   {
+                                                       "case_id":  16,
+                                                       "max_error":  0.52285020
+                                                   },
+                                                   {
+                                                       "case_id":  17,
+                                                       "max_error":  0.05943379
+                                                   },
+                                                   {
+                                                       "case_id":  18,
+                                                       "max_error":  0.02473691
+                                                   },
+                                                   {
+                                                       "case_id":  19,
+                                                       "max_error":  0.19517054
+                                                   },
+                                                   {
+                                                       "case_id":  20,
+                                                       "max_error":  0.23156939
+                                                   },
+                                                   {
+                                                       "case_id":  21,
+                                                       "max_error":  0.04125114
+                                                   },
+                                                   {
+                                                       "case_id":  22,
+                                                       "max_error":  0.00748059
+                                                   },
+                                                   {
+                                                       "case_id":  23,
+                                                       "max_error":  0.09201742
+                                                   },
+                                                   {
+                                                       "case_id":  24,
+                                                       "max_error":  0.01916624
+                                                   },
+                                                   {
+                                                       "case_id":  25,
+                                                       "max_error":  0.19094138
+                                                   },
+                                                   {
+                                                       "case_id":  26,
+                                                       "max_error":  0.01451117
+                                                   },
+                                                   {
+                                                       "case_id":  27,
+                                                       "max_error":  0.04910965
+                                                   },
+                                                   {
+                                                       "case_id":  28,
+                                                       "max_error":  0.04930622
+                                                   },
+                                                   {
+                                                       "case_id":  29,
+                                                       "max_error":  0.11252197
+                                                   },
+                                                   {
+                                                       "case_id":  30,
+                                                       "max_error":  0.00966860
+                                                   },
+                                                   {
+                                                       "case_id":  31,
+                                                       "max_error":  0.09620972
+                                                   },
+                                                   {
+                                                       "case_id":  32,
+                                                       "max_error":  0.15623548
+                                                   },
+                                                   {
+                                                       "case_id":  33,
+                                                       "max_error":  0.79438214
+                                                   },
+                                                   {
+                                                       "case_id":  34,
+                                                       "max_error":  0.21296092
+                                                   },
+                                                   {
+                                                       "case_id":  35,
+                                                       "max_error":  0.01730286
+                                                   },
+                                                   {
+                                                       "case_id":  36,
+                                                       "max_error":  0.21065393
+                                                   },
+                                                   {
+                                                       "case_id":  37,
+                                                       "max_error":  0.03511376
+                                                   },
+                                                   {
+                                                       "case_id":  38,
+                                                       "max_error":  0.03894021
+                                                   },
+                                                   {
+                                                       "case_id":  39,
+                                                       "max_error":  0.07652329
+                                                   },
+                                                   {
+                                                       "case_id":  40,
+                                                       "max_error":  0.27823856
+                                                   },
+                                                   {
+                                                       "case_id":  41,
+                                                       "max_error":  0.11077124
+                                                   },
+                                                   {
+                                                       "case_id":  42,
+                                                       "max_error":  0.02348332
+                                                   },
+                                                   {
+                                                       "case_id":  43,
+                                                       "max_error":  0.03567068
+                                                   },
+                                                   {
+                                                       "case_id":  44,
+                                                       "max_error":  0.14634196
+                                                   },
+                                                   {
+                                                       "case_id":  45,
+                                                       "max_error":  0.13077423
+                                                   },
+                                                   {
+                                                       "case_id":  46,
+                                                       "max_error":  0.17199315
+                                                   },
+                                                   {
+                                                       "case_id":  47,
+                                                       "max_error":  0.10554341
+                                                   },
+                                                   {
+                                                       "case_id":  48,
+                                                       "max_error":  0.01432984
+                                                   },
+                                                   {
+                                                       "case_id":  49,
+                                                       "max_error":  0.10290109
+                                                   },
+                                                   {
+                                                       "case_id":  50,
+                                                       "max_error":  0.10182278
+                                                   },
+                                                   {
+                                                       "case_id":  51,
+                                                       "max_error":  0.05432205
+                                                   },
+                                                   {
+                                                       "case_id":  52,
+                                                       "max_error":  0.10595536
+                                                   },
+                                                   {
+                                                       "case_id":  53,
+                                                       "max_error":  0.10634443
+                                                   },
+                                                   {
+                                                       "case_id":  54,
+                                                       "max_error":  0.13209640
+                                                   },
+                                                   {
+                                                       "case_id":  55,
+                                                       "max_error":  0.01453862
+                                                   },
+                                                   {
+                                                       "case_id":  56,
+                                                       "max_error":  0.07481701
+                                                   },
+                                                   {
+                                                       "case_id":  57,
+                                                       "max_error":  0.11403793
+                                                   },
+                                                   {
+                                                       "case_id":  58,
+                                                       "max_error":  0.02616066
+                                                   },
+                                                   {
+                                                       "case_id":  59,
+                                                       "max_error":  0.00825533
+                                                   },
+                                                   {
+                                                       "case_id":  60,
+                                                       "max_error":  0.01701029
+                                                   },
+                                                   {
+                                                       "case_id":  61,
+                                                       "max_error":  0.03671883
+                                                   },
+                                                   {
+                                                       "case_id":  62,
+                                                       "max_error":  0.09928237
+                                                   },
+                                                   {
+                                                       "case_id":  63,
+                                                       "max_error":  0.01875188
+                                                   },
+                                                   {
+                                                       "case_id":  64,
+                                                       "max_error":  0.09928719
+                                                   },
+                                                   {
+                                                       "case_id":  65,
+                                                       "max_error":  0.05322567
+                                                   },
+                                                   {
+                                                       "case_id":  66,
+                                                       "max_error":  0.04176423
+                                                   },
+                                                   {
+                                                       "case_id":  67,
+                                                       "max_error":  0.11592342
+                                                   },
+                                                   {
+                                                       "case_id":  68,
+                                                       "max_error":  0.03883755
+                                                   },
+                                                   {
+                                                       "case_id":  69,
+                                                       "max_error":  0.18119992
+                                                   },
+                                                   {
+                                                       "case_id":  70,
+                                                       "max_error":  0.00894008
+                                                   },
+                                                   {
+                                                       "case_id":  71,
+                                                       "max_error":  0.03279012
+                                                   },
+                                                   {
+                                                       "case_id":  72,
+                                                       "max_error":  0.01604930
+                                                   },
+                                                   {
+                                                       "case_id":  73,
+                                                       "max_error":  0.03827010
+                                                   },
+                                                   {
+                                                       "case_id":  74,
+                                                       "max_error":  0.08258125
+                                                   },
+                                                   {
+                                                       "case_id":  75,
+                                                       "max_error":  0.04649657
+                                                   },
+                                                   {
+                                                       "case_id":  76,
+                                                       "max_error":  0.02182734
+                                                   },
+                                                   {
+                                                       "case_id":  77,
+                                                       "max_error":  0.36569858
+                                                   },
+                                                   {
+                                                       "case_id":  78,
+                                                       "max_error":  0.25326656
+                                                   },
+                                                   {
+                                                       "case_id":  79,
+                                                       "max_error":  0.03530910
+                                                   },
+                                                   {
+                                                       "case_id":  80,
+                                                       "max_error":  0.02001079
+                                                   },
+                                                   {
+                                                       "case_id":  81,
+                                                       "max_error":  0.06552523
+                                                   },
+                                                   {
+                                                       "case_id":  82,
+                                                       "max_error":  0.00905363
+                                                   },
+                                                   {
+                                                       "case_id":  83,
+                                                       "max_error":  0.01560001
+                                                   },
+                                                   {
+                                                       "case_id":  84,
+                                                       "max_error":  0.02863517
+                                                   },
+                                                   {
+                                                       "case_id":  85,
+                                                       "max_error":  0.58091066
+                                                   },
+                                                   {
+                                                       "case_id":  86,
+                                                       "max_error":  0.05408738
+                                                   },
+                                                   {
+                                                       "case_id":  87,
+                                                       "max_error":  0.01467482
+                                                   },
+                                                   {
+                                                       "case_id":  88,
+                                                       "max_error":  0.20795162
+                                                   },
+                                                   {
+                                                       "case_id":  89,
+                                                       "max_error":  0.10168919
+                                                   },
+                                                   {
+                                                       "case_id":  90,
+                                                       "max_error":  0.05215156
+                                                   },
+                                                   {
+                                                       "case_id":  91,
+                                                       "max_error":  0.03002697
+                                                   },
+                                                   {
+                                                       "case_id":  92,
+                                                       "max_error":  0.07161697
+                                                   },
+                                                   {
+                                                       "case_id":  93,
+                                                       "max_error":  0.13854493
+                                                   },
+                                                   {
+                                                       "case_id":  94,
+                                                       "max_error":  0.04036932
+                                                   },
+                                                   {
+                                                       "case_id":  95,
+                                                       "max_error":  0.02481901
+                                                   },
+                                                   {
+                                                       "case_id":  96,
+                                                       "max_error":  0.03304830
+                                                   },
+                                                   {
+                                                       "case_id":  97,
+                                                       "max_error":  0.10680710
+                                                   },
+                                                   {
+                                                       "case_id":  98,
+                                                       "max_error":  0.10505080
+                                                   },
+                                                   {
+                                                       "case_id":  99,
+                                                       "max_error":  0.02169049
+                                                   }
+                                               ]
+                       },
+                       {
+                           "requested_workers":  2,
+                           "actual_workers":  2,
+                           "case_count":  100,
+                           "mesh_baseline":  48,
+                           "seed":  42,
+                           "warmup_runs":  1,
+                           "measured_repetitions":  5,
+                           "median_serial_ms":  4.4960,
+                           "median_parallel_ms":  3.2736,
+                           "speedup":  1.3734,
+                           "efficiency":  0.6867,
+                           "max_nodal_temperature_difference_C":  0.0000000000,
+                           "agreement_ok":  true,
+                           "serial_errors":  [
+                                                 {
+                                                     "case_id":  0,
+                                                     "max_error":  0.06205004
+                                                 },
+                                                 {
+                                                     "case_id":  1,
+                                                     "max_error":  0.00903642
+                                                 },
+                                                 {
+                                                     "case_id":  2,
+                                                     "max_error":  0.09878202
+                                                 },
+                                                 {
+                                                     "case_id":  3,
+                                                     "max_error":  0.04595348
+                                                 },
+                                                 {
+                                                     "case_id":  4,
+                                                     "max_error":  0.17032551
+                                                 },
+                                                 {
+                                                     "case_id":  5,
+                                                     "max_error":  0.02022858
+                                                 },
+                                                 {
+                                                     "case_id":  6,
+                                                     "max_error":  0.01375618
+                                                 },
+                                                 {
+                                                     "case_id":  7,
+                                                     "max_error":  0.04926677
+                                                 },
+                                                 {
+                                                     "case_id":  8,
+                                                     "max_error":  0.03294799
+                                                 },
+                                                 {
+                                                     "case_id":  9,
+                                                     "max_error":  0.03634557
+                                                 },
+                                                 {
+                                                     "case_id":  10,
+                                                     "max_error":  0.06164599
+                                                 },
+                                                 {
+                                                     "case_id":  11,
+                                                     "max_error":  0.15030036
+                                                 },
+                                                 {
+                                                     "case_id":  12,
+                                                     "max_error":  0.04358573
+                                                 },
+                                                 {
+                                                     "case_id":  13,
+                                                     "max_error":  0.09831332
+                                                 },
+                                                 {
+                                                     "case_id":  14,
+                                                     "max_error":  0.02293898
+                                                 },
+                                                 {
+                                                     "case_id":  15,
+                                                     "max_error":  0.00674201
+                                                 },
+                                                 {
+                                                     "case_id":  16,
+                                                     "max_error":  0.52285020
+                                                 },
+                                                 {
+                                                     "case_id":  17,
+                                                     "max_error":  0.05943379
+                                                 },
+                                                 {
+                                                     "case_id":  18,
+                                                     "max_error":  0.02473691
+                                                 },
+                                                 {
+                                                     "case_id":  19,
+                                                     "max_error":  0.19517054
+                                                 },
+                                                 {
+                                                     "case_id":  20,
+                                                     "max_error":  0.23156939
+                                                 },
+                                                 {
+                                                     "case_id":  21,
+                                                     "max_error":  0.04125114
+                                                 },
+                                                 {
+                                                     "case_id":  22,
+                                                     "max_error":  0.00748059
+                                                 },
+                                                 {
+                                                     "case_id":  23,
+                                                     "max_error":  0.09201742
+                                                 },
+                                                 {
+                                                     "case_id":  24,
+                                                     "max_error":  0.01916624
+                                                 },
+                                                 {
+                                                     "case_id":  25,
+                                                     "max_error":  0.19094138
+                                                 },
+                                                 {
+                                                     "case_id":  26,
+                                                     "max_error":  0.01451117
+                                                 },
+                                                 {
+                                                     "case_id":  27,
+                                                     "max_error":  0.04910965
+                                                 },
+                                                 {
+                                                     "case_id":  28,
+                                                     "max_error":  0.04930622
+                                                 },
+                                                 {
+                                                     "case_id":  29,
+                                                     "max_error":  0.11252197
+                                                 },
+                                                 {
+                                                     "case_id":  30,
+                                                     "max_error":  0.00966860
+                                                 },
+                                                 {
+                                                     "case_id":  31,
+                                                     "max_error":  0.09620972
+                                                 },
+                                                 {
+                                                     "case_id":  32,
+                                                     "max_error":  0.15623548
+                                                 },
+                                                 {
+                                                     "case_id":  33,
+                                                     "max_error":  0.79438214
+                                                 },
+                                                 {
+                                                     "case_id":  34,
+                                                     "max_error":  0.21296092
+                                                 },
+                                                 {
+                                                     "case_id":  35,
+                                                     "max_error":  0.01730286
+                                                 },
+                                                 {
+                                                     "case_id":  36,
+                                                     "max_error":  0.21065393
+                                                 },
+                                                 {
+                                                     "case_id":  37,
+                                                     "max_error":  0.03511376
+                                                 },
+                                                 {
+                                                     "case_id":  38,
+                                                     "max_error":  0.03894021
+                                                 },
+                                                 {
+                                                     "case_id":  39,
+                                                     "max_error":  0.07652329
+                                                 },
+                                                 {
+                                                     "case_id":  40,
+                                                     "max_error":  0.27823856
+                                                 },
+                                                 {
+                                                     "case_id":  41,
+                                                     "max_error":  0.11077124
+                                                 },
+                                                 {
+                                                     "case_id":  42,
+                                                     "max_error":  0.02348332
+                                                 },
+                                                 {
+                                                     "case_id":  43,
+                                                     "max_error":  0.03567068
+                                                 },
+                                                 {
+                                                     "case_id":  44,
+                                                     "max_error":  0.14634196
+                                                 },
+                                                 {
+                                                     "case_id":  45,
+                                                     "max_error":  0.13077423
+                                                 },
+                                                 {
+                                                     "case_id":  46,
+                                                     "max_error":  0.17199315
+                                                 },
+                                                 {
+                                                     "case_id":  47,
+                                                     "max_error":  0.10554341
+                                                 },
+                                                 {
+                                                     "case_id":  48,
+                                                     "max_error":  0.01432984
+                                                 },
+                                                 {
+                                                     "case_id":  49,
+                                                     "max_error":  0.10290109
+                                                 },
+                                                 {
+                                                     "case_id":  50,
+                                                     "max_error":  0.10182278
+                                                 },
+                                                 {
+                                                     "case_id":  51,
+                                                     "max_error":  0.05432205
+                                                 },
+                                                 {
+                                                     "case_id":  52,
+                                                     "max_error":  0.10595536
+                                                 },
+                                                 {
+                                                     "case_id":  53,
+                                                     "max_error":  0.10634443
+                                                 },
+                                                 {
+                                                     "case_id":  54,
+                                                     "max_error":  0.13209640
+                                                 },
+                                                 {
+                                                     "case_id":  55,
+                                                     "max_error":  0.01453862
+                                                 },
+                                                 {
+                                                     "case_id":  56,
+                                                     "max_error":  0.07481701
+                                                 },
+                                                 {
+                                                     "case_id":  57,
+                                                     "max_error":  0.11403793
+                                                 },
+                                                 {
+                                                     "case_id":  58,
+                                                     "max_error":  0.02616066
+                                                 },
+                                                 {
+                                                     "case_id":  59,
+                                                     "max_error":  0.00825533
+                                                 },
+                                                 {
+                                                     "case_id":  60,
+                                                     "max_error":  0.01701029
+                                                 },
+                                                 {
+                                                     "case_id":  61,
+                                                     "max_error":  0.03671883
+                                                 },
+                                                 {
+                                                     "case_id":  62,
+                                                     "max_error":  0.09928237
+                                                 },
+                                                 {
+                                                     "case_id":  63,
+                                                     "max_error":  0.01875188
+                                                 },
+                                                 {
+                                                     "case_id":  64,
+                                                     "max_error":  0.09928719
+                                                 },
+                                                 {
+                                                     "case_id":  65,
+                                                     "max_error":  0.05322567
+                                                 },
+                                                 {
+                                                     "case_id":  66,
+                                                     "max_error":  0.04176423
+                                                 },
+                                                 {
+                                                     "case_id":  67,
+                                                     "max_error":  0.11592342
+                                                 },
+                                                 {
+                                                     "case_id":  68,
+                                                     "max_error":  0.03883755
+                                                 },
+                                                 {
+                                                     "case_id":  69,
+                                                     "max_error":  0.18119992
+                                                 },
+                                                 {
+                                                     "case_id":  70,
+                                                     "max_error":  0.00894008
+                                                 },
+                                                 {
+                                                     "case_id":  71,
+                                                     "max_error":  0.03279012
+                                                 },
+                                                 {
+                                                     "case_id":  72,
+                                                     "max_error":  0.01604930
+                                                 },
+                                                 {
+                                                     "case_id":  73,
+                                                     "max_error":  0.03827010
+                                                 },
+                                                 {
+                                                     "case_id":  74,
+                                                     "max_error":  0.08258125
+                                                 },
+                                                 {
+                                                     "case_id":  75,
+                                                     "max_error":  0.04649657
+                                                 },
+                                                 {
+                                                     "case_id":  76,
+                                                     "max_error":  0.02182734
+                                                 },
+                                                 {
+                                                     "case_id":  77,
+                                                     "max_error":  0.36569858
+                                                 },
+                                                 {
+                                                     "case_id":  78,
+                                                     "max_error":  0.25326656
+                                                 },
+                                                 {
+                                                     "case_id":  79,
+                                                     "max_error":  0.03530910
+                                                 },
+                                                 {
+                                                     "case_id":  80,
+                                                     "max_error":  0.02001079
+                                                 },
+                                                 {
+                                                     "case_id":  81,
+                                                     "max_error":  0.06552523
+                                                 },
+                                                 {
+                                                     "case_id":  82,
+                                                     "max_error":  0.00905363
+                                                 },
+                                                 {
+                                                     "case_id":  83,
+                                                     "max_error":  0.01560001
+                                                 },
+                                                 {
+                                                     "case_id":  84,
+                                                     "max_error":  0.02863517
+                                                 },
+                                                 {
+                                                     "case_id":  85,
+                                                     "max_error":  0.58091066
+                                                 },
+                                                 {
+                                                     "case_id":  86,
+                                                     "max_error":  0.05408738
+                                                 },
+                                                 {
+                                                     "case_id":  87,
+                                                     "max_error":  0.01467482
+                                                 },
+                                                 {
+                                                     "case_id":  88,
+                                                     "max_error":  0.20795162
+                                                 },
+                                                 {
+                                                     "case_id":  89,
+                                                     "max_error":  0.10168919
+                                                 },
+                                                 {
+                                                     "case_id":  90,
+                                                     "max_error":  0.05215156
+                                                 },
+                                                 {
+                                                     "case_id":  91,
+                                                     "max_error":  0.03002697
+                                                 },
+                                                 {
+                                                     "case_id":  92,
+                                                     "max_error":  0.07161697
+                                                 },
+                                                 {
+                                                     "case_id":  93,
+                                                     "max_error":  0.13854493
+                                                 },
+                                                 {
+                                                     "case_id":  94,
+                                                     "max_error":  0.04036932
+                                                 },
+                                                 {
+                                                     "case_id":  95,
+                                                     "max_error":  0.02481901
+                                                 },
+                                                 {
+                                                     "case_id":  96,
+                                                     "max_error":  0.03304830
+                                                 },
+                                                 {
+                                                     "case_id":  97,
+                                                     "max_error":  0.10680710
+                                                 },
+                                                 {
+                                                     "case_id":  98,
+                                                     "max_error":  0.10505080
+                                                 },
+                                                 {
+                                                     "case_id":  99,
+                                                     "max_error":  0.02169049
+                                                 }
+                                             ],
+                           "parallel_errors":  [
+                                                   {
+                                                       "case_id":  0,
+                                                       "max_error":  0.06205004
+                                                   },
+                                                   {
+                                                       "case_id":  1,
+                                                       "max_error":  0.00903642
+                                                   },
+                                                   {
+                                                       "case_id":  2,
+                                                       "max_error":  0.09878202
+                                                   },
+                                                   {
+                                                       "case_id":  3,
+                                                       "max_error":  0.04595348
+                                                   },
+                                                   {
+                                                       "case_id":  4,
+                                                       "max_error":  0.17032551
+                                                   },
+                                                   {
+                                                       "case_id":  5,
+                                                       "max_error":  0.02022858
+                                                   },
+                                                   {
+                                                       "case_id":  6,
+                                                       "max_error":  0.01375618
+                                                   },
+                                                   {
+                                                       "case_id":  7,
+                                                       "max_error":  0.04926677
+                                                   },
+                                                   {
+                                                       "case_id":  8,
+                                                       "max_error":  0.03294799
+                                                   },
+                                                   {
+                                                       "case_id":  9,
+                                                       "max_error":  0.03634557
+                                                   },
+                                                   {
+                                                       "case_id":  10,
+                                                       "max_error":  0.06164599
+                                                   },
+                                                   {
+                                                       "case_id":  11,
+                                                       "max_error":  0.15030036
+                                                   },
+                                                   {
+                                                       "case_id":  12,
+                                                       "max_error":  0.04358573
+                                                   },
+                                                   {
+                                                       "case_id":  13,
+                                                       "max_error":  0.09831332
+                                                   },
+                                                   {
+                                                       "case_id":  14,
+                                                       "max_error":  0.02293898
+                                                   },
+                                                   {
+                                                       "case_id":  15,
+                                                       "max_error":  0.00674201
+                                                   },
+                                                   {
+                                                       "case_id":  16,
+                                                       "max_error":  0.52285020
+                                                   },
+                                                   {
+                                                       "case_id":  17,
+                                                       "max_error":  0.05943379
+                                                   },
+                                                   {
+                                                       "case_id":  18,
+                                                       "max_error":  0.02473691
+                                                   },
+                                                   {
+                                                       "case_id":  19,
+                                                       "max_error":  0.19517054
+                                                   },
+                                                   {
+                                                       "case_id":  20,
+                                                       "max_error":  0.23156939
+                                                   },
+                                                   {
+                                                       "case_id":  21,
+                                                       "max_error":  0.04125114
+                                                   },
+                                                   {
+                                                       "case_id":  22,
+                                                       "max_error":  0.00748059
+                                                   },
+                                                   {
+                                                       "case_id":  23,
+                                                       "max_error":  0.09201742
+                                                   },
+                                                   {
+                                                       "case_id":  24,
+                                                       "max_error":  0.01916624
+                                                   },
+                                                   {
+                                                       "case_id":  25,
+                                                       "max_error":  0.19094138
+                                                   },
+                                                   {
+                                                       "case_id":  26,
+                                                       "max_error":  0.01451117
+                                                   },
+                                                   {
+                                                       "case_id":  27,
+                                                       "max_error":  0.04910965
+                                                   },
+                                                   {
+                                                       "case_id":  28,
+                                                       "max_error":  0.04930622
+                                                   },
+                                                   {
+                                                       "case_id":  29,
+                                                       "max_error":  0.11252197
+                                                   },
+                                                   {
+                                                       "case_id":  30,
+                                                       "max_error":  0.00966860
+                                                   },
+                                                   {
+                                                       "case_id":  31,
+                                                       "max_error":  0.09620972
+                                                   },
+                                                   {
+                                                       "case_id":  32,
+                                                       "max_error":  0.15623548
+                                                   },
+                                                   {
+                                                       "case_id":  33,
+                                                       "max_error":  0.79438214
+                                                   },
+                                                   {
+                                                       "case_id":  34,
+                                                       "max_error":  0.21296092
+                                                   },
+                                                   {
+                                                       "case_id":  35,
+                                                       "max_error":  0.01730286
+                                                   },
+                                                   {
+                                                       "case_id":  36,
+                                                       "max_error":  0.21065393
+                                                   },
+                                                   {
+                                                       "case_id":  37,
+                                                       "max_error":  0.03511376
+                                                   },
+                                                   {
+                                                       "case_id":  38,
+                                                       "max_error":  0.03894021
+                                                   },
+                                                   {
+                                                       "case_id":  39,
+                                                       "max_error":  0.07652329
+                                                   },
+                                                   {
+                                                       "case_id":  40,
+                                                       "max_error":  0.27823856
+                                                   },
+                                                   {
+                                                       "case_id":  41,
+                                                       "max_error":  0.11077124
+                                                   },
+                                                   {
+                                                       "case_id":  42,
+                                                       "max_error":  0.02348332
+                                                   },
+                                                   {
+                                                       "case_id":  43,
+                                                       "max_error":  0.03567068
+                                                   },
+                                                   {
+                                                       "case_id":  44,
+                                                       "max_error":  0.14634196
+                                                   },
+                                                   {
+                                                       "case_id":  45,
+                                                       "max_error":  0.13077423
+                                                   },
+                                                   {
+                                                       "case_id":  46,
+                                                       "max_error":  0.17199315
+                                                   },
+                                                   {
+                                                       "case_id":  47,
+                                                       "max_error":  0.10554341
+                                                   },
+                                                   {
+                                                       "case_id":  48,
+                                                       "max_error":  0.01432984
+                                                   },
+                                                   {
+                                                       "case_id":  49,
+                                                       "max_error":  0.10290109
+                                                   },
+                                                   {
+                                                       "case_id":  50,
+                                                       "max_error":  0.10182278
+                                                   },
+                                                   {
+                                                       "case_id":  51,
+                                                       "max_error":  0.05432205
+                                                   },
+                                                   {
+                                                       "case_id":  52,
+                                                       "max_error":  0.10595536
+                                                   },
+                                                   {
+                                                       "case_id":  53,
+                                                       "max_error":  0.10634443
+                                                   },
+                                                   {
+                                                       "case_id":  54,
+                                                       "max_error":  0.13209640
+                                                   },
+                                                   {
+                                                       "case_id":  55,
+                                                       "max_error":  0.01453862
+                                                   },
+                                                   {
+                                                       "case_id":  56,
+                                                       "max_error":  0.07481701
+                                                   },
+                                                   {
+                                                       "case_id":  57,
+                                                       "max_error":  0.11403793
+                                                   },
+                                                   {
+                                                       "case_id":  58,
+                                                       "max_error":  0.02616066
+                                                   },
+                                                   {
+                                                       "case_id":  59,
+                                                       "max_error":  0.00825533
+                                                   },
+                                                   {
+                                                       "case_id":  60,
+                                                       "max_error":  0.01701029
+                                                   },
+                                                   {
+                                                       "case_id":  61,
+                                                       "max_error":  0.03671883
+                                                   },
+                                                   {
+                                                       "case_id":  62,
+                                                       "max_error":  0.09928237
+                                                   },
+                                                   {
+                                                       "case_id":  63,
+                                                       "max_error":  0.01875188
+                                                   },
+                                                   {
+                                                       "case_id":  64,
+                                                       "max_error":  0.09928719
+                                                   },
+                                                   {
+                                                       "case_id":  65,
+                                                       "max_error":  0.05322567
+                                                   },
+                                                   {
+                                                       "case_id":  66,
+                                                       "max_error":  0.04176423
+                                                   },
+                                                   {
+                                                       "case_id":  67,
+                                                       "max_error":  0.11592342
+                                                   },
+                                                   {
+                                                       "case_id":  68,
+                                                       "max_error":  0.03883755
+                                                   },
+                                                   {
+                                                       "case_id":  69,
+                                                       "max_error":  0.18119992
+                                                   },
+                                                   {
+                                                       "case_id":  70,
+                                                       "max_error":  0.00894008
+                                                   },
+                                                   {
+                                                       "case_id":  71,
+                                                       "max_error":  0.03279012
+                                                   },
+                                                   {
+                                                       "case_id":  72,
+                                                       "max_error":  0.01604930
+                                                   },
+                                                   {
+                                                       "case_id":  73,
+                                                       "max_error":  0.03827010
+                                                   },
+                                                   {
+                                                       "case_id":  74,
+                                                       "max_error":  0.08258125
+                                                   },
+                                                   {
+                                                       "case_id":  75,
+                                                       "max_error":  0.04649657
+                                                   },
+                                                   {
+                                                       "case_id":  76,
+                                                       "max_error":  0.02182734
+                                                   },
+                                                   {
+                                                       "case_id":  77,
+                                                       "max_error":  0.36569858
+                                                   },
+                                                   {
+                                                       "case_id":  78,
+                                                       "max_error":  0.25326656
+                                                   },
+                                                   {
+                                                       "case_id":  79,
+                                                       "max_error":  0.03530910
+                                                   },
+                                                   {
+                                                       "case_id":  80,
+                                                       "max_error":  0.02001079
+                                                   },
+                                                   {
+                                                       "case_id":  81,
+                                                       "max_error":  0.06552523
+                                                   },
+                                                   {
+                                                       "case_id":  82,
+                                                       "max_error":  0.00905363
+                                                   },
+                                                   {
+                                                       "case_id":  83,
+                                                       "max_error":  0.01560001
+                                                   },
+                                                   {
+                                                       "case_id":  84,
+                                                       "max_error":  0.02863517
+                                                   },
+                                                   {
+                                                       "case_id":  85,
+                                                       "max_error":  0.58091066
+                                                   },
+                                                   {
+                                                       "case_id":  86,
+                                                       "max_error":  0.05408738
+                                                   },
+                                                   {
+                                                       "case_id":  87,
+                                                       "max_error":  0.01467482
+                                                   },
+                                                   {
+                                                       "case_id":  88,
+                                                       "max_error":  0.20795162
+                                                   },
+                                                   {
+                                                       "case_id":  89,
+                                                       "max_error":  0.10168919
+                                                   },
+                                                   {
+                                                       "case_id":  90,
+                                                       "max_error":  0.05215156
+                                                   },
+                                                   {
+                                                       "case_id":  91,
+                                                       "max_error":  0.03002697
+                                                   },
+                                                   {
+                                                       "case_id":  92,
+                                                       "max_error":  0.07161697
+                                                   },
+                                                   {
+                                                       "case_id":  93,
+                                                       "max_error":  0.13854493
+                                                   },
+                                                   {
+                                                       "case_id":  94,
+                                                       "max_error":  0.04036932
+                                                   },
+                                                   {
+                                                       "case_id":  95,
+                                                       "max_error":  0.02481901
+                                                   },
+                                                   {
+                                                       "case_id":  96,
+                                                       "max_error":  0.03304830
+                                                   },
+                                                   {
+                                                       "case_id":  97,
+                                                       "max_error":  0.10680710
+                                                   },
+                                                   {
+                                                       "case_id":  98,
+                                                       "max_error":  0.10505080
+                                                   },
+                                                   {
+                                                       "case_id":  99,
+                                                       "max_error":  0.02169049
+                                                   }
+                                               ]
+                       },
+                       {
+                           "requested_workers":  4,
+                           "actual_workers":  4,
+                           "case_count":  100,
+                           "mesh_baseline":  48,
+                           "seed":  42,
+                           "warmup_runs":  1,
+                           "measured_repetitions":  5,
+                           "median_serial_ms":  4.6755,
+                           "median_parallel_ms":  2.4598,
+                           "speedup":  1.9008,
+                           "efficiency":  0.4752,
+                           "max_nodal_temperature_difference_C":  0.0000000000,
+                           "agreement_ok":  true,
+                           "serial_errors":  [
+                                                 {
+                                                     "case_id":  0,
+                                                     "max_error":  0.06205004
+                                                 },
+                                                 {
+                                                     "case_id":  1,
+                                                     "max_error":  0.00903642
+                                                 },
+                                                 {
+                                                     "case_id":  2,
+                                                     "max_error":  0.09878202
+                                                 },
+                                                 {
+                                                     "case_id":  3,
+                                                     "max_error":  0.04595348
+                                                 },
+                                                 {
+                                                     "case_id":  4,
+                                                     "max_error":  0.17032551
+                                                 },
+                                                 {
+                                                     "case_id":  5,
+                                                     "max_error":  0.02022858
+                                                 },
+                                                 {
+                                                     "case_id":  6,
+                                                     "max_error":  0.01375618
+                                                 },
+                                                 {
+                                                     "case_id":  7,
+                                                     "max_error":  0.04926677
+                                                 },
+                                                 {
+                                                     "case_id":  8,
+                                                     "max_error":  0.03294799
+                                                 },
+                                                 {
+                                                     "case_id":  9,
+                                                     "max_error":  0.03634557
+                                                 },
+                                                 {
+                                                     "case_id":  10,
+                                                     "max_error":  0.06164599
+                                                 },
+                                                 {
+                                                     "case_id":  11,
+                                                     "max_error":  0.15030036
+                                                 },
+                                                 {
+                                                     "case_id":  12,
+                                                     "max_error":  0.04358573
+                                                 },
+                                                 {
+                                                     "case_id":  13,
+                                                     "max_error":  0.09831332
+                                                 },
+                                                 {
+                                                     "case_id":  14,
+                                                     "max_error":  0.02293898
+                                                 },
+                                                 {
+                                                     "case_id":  15,
+                                                     "max_error":  0.00674201
+                                                 },
+                                                 {
+                                                     "case_id":  16,
+                                                     "max_error":  0.52285020
+                                                 },
+                                                 {
+                                                     "case_id":  17,
+                                                     "max_error":  0.05943379
+                                                 },
+                                                 {
+                                                     "case_id":  18,
+                                                     "max_error":  0.02473691
+                                                 },
+                                                 {
+                                                     "case_id":  19,
+                                                     "max_error":  0.19517054
+                                                 },
+                                                 {
+                                                     "case_id":  20,
+                                                     "max_error":  0.23156939
+                                                 },
+                                                 {
+                                                     "case_id":  21,
+                                                     "max_error":  0.04125114
+                                                 },
+                                                 {
+                                                     "case_id":  22,
+                                                     "max_error":  0.00748059
+                                                 },
+                                                 {
+                                                     "case_id":  23,
+                                                     "max_error":  0.09201742
+                                                 },
+                                                 {
+                                                     "case_id":  24,
+                                                     "max_error":  0.01916624
+                                                 },
+                                                 {
+                                                     "case_id":  25,
+                                                     "max_error":  0.19094138
+                                                 },
+                                                 {
+                                                     "case_id":  26,
+                                                     "max_error":  0.01451117
+                                                 },
+                                                 {
+                                                     "case_id":  27,
+                                                     "max_error":  0.04910965
+                                                 },
+                                                 {
+                                                     "case_id":  28,
+                                                     "max_error":  0.04930622
+                                                 },
+                                                 {
+                                                     "case_id":  29,
+                                                     "max_error":  0.11252197
+                                                 },
+                                                 {
+                                                     "case_id":  30,
+                                                     "max_error":  0.00966860
+                                                 },
+                                                 {
+                                                     "case_id":  31,
+                                                     "max_error":  0.09620972
+                                                 },
+                                                 {
+                                                     "case_id":  32,
+                                                     "max_error":  0.15623548
+                                                 },
+                                                 {
+                                                     "case_id":  33,
+                                                     "max_error":  0.79438214
+                                                 },
+                                                 {
+                                                     "case_id":  34,
+                                                     "max_error":  0.21296092
+                                                 },
+                                                 {
+                                                     "case_id":  35,
+                                                     "max_error":  0.01730286
+                                                 },
+                                                 {
+                                                     "case_id":  36,
+                                                     "max_error":  0.21065393
+                                                 },
+                                                 {
+                                                     "case_id":  37,
+                                                     "max_error":  0.03511376
+                                                 },
+                                                 {
+                                                     "case_id":  38,
+                                                     "max_error":  0.03894021
+                                                 },
+                                                 {
+                                                     "case_id":  39,
+                                                     "max_error":  0.07652329
+                                                 },
+                                                 {
+                                                     "case_id":  40,
+                                                     "max_error":  0.27823856
+                                                 },
+                                                 {
+                                                     "case_id":  41,
+                                                     "max_error":  0.11077124
+                                                 },
+                                                 {
+                                                     "case_id":  42,
+                                                     "max_error":  0.02348332
+                                                 },
+                                                 {
+                                                     "case_id":  43,
+                                                     "max_error":  0.03567068
+                                                 },
+                                                 {
+                                                     "case_id":  44,
+                                                     "max_error":  0.14634196
+                                                 },
+                                                 {
+                                                     "case_id":  45,
+                                                     "max_error":  0.13077423
+                                                 },
+                                                 {
+                                                     "case_id":  46,
+                                                     "max_error":  0.17199315
+                                                 },
+                                                 {
+                                                     "case_id":  47,
+                                                     "max_error":  0.10554341
+                                                 },
+                                                 {
+                                                     "case_id":  48,
+                                                     "max_error":  0.01432984
+                                                 },
+                                                 {
+                                                     "case_id":  49,
+                                                     "max_error":  0.10290109
+                                                 },
+                                                 {
+                                                     "case_id":  50,
+                                                     "max_error":  0.10182278
+                                                 },
+                                                 {
+                                                     "case_id":  51,
+                                                     "max_error":  0.05432205
+                                                 },
+                                                 {
+                                                     "case_id":  52,
+                                                     "max_error":  0.10595536
+                                                 },
+                                                 {
+                                                     "case_id":  53,
+                                                     "max_error":  0.10634443
+                                                 },
+                                                 {
+                                                     "case_id":  54,
+                                                     "max_error":  0.13209640
+                                                 },
+                                                 {
+                                                     "case_id":  55,
+                                                     "max_error":  0.01453862
+                                                 },
+                                                 {
+                                                     "case_id":  56,
+                                                     "max_error":  0.07481701
+                                                 },
+                                                 {
+                                                     "case_id":  57,
+                                                     "max_error":  0.11403793
+                                                 },
+                                                 {
+                                                     "case_id":  58,
+                                                     "max_error":  0.02616066
+                                                 },
+                                                 {
+                                                     "case_id":  59,
+                                                     "max_error":  0.00825533
+                                                 },
+                                                 {
+                                                     "case_id":  60,
+                                                     "max_error":  0.01701029
+                                                 },
+                                                 {
+                                                     "case_id":  61,
+                                                     "max_error":  0.03671883
+                                                 },
+                                                 {
+                                                     "case_id":  62,
+                                                     "max_error":  0.09928237
+                                                 },
+                                                 {
+                                                     "case_id":  63,
+                                                     "max_error":  0.01875188
+                                                 },
+                                                 {
+                                                     "case_id":  64,
+                                                     "max_error":  0.09928719
+                                                 },
+                                                 {
+                                                     "case_id":  65,
+                                                     "max_error":  0.05322567
+                                                 },
+                                                 {
+                                                     "case_id":  66,
+                                                     "max_error":  0.04176423
+                                                 },
+                                                 {
+                                                     "case_id":  67,
+                                                     "max_error":  0.11592342
+                                                 },
+                                                 {
+                                                     "case_id":  68,
+                                                     "max_error":  0.03883755
+                                                 },
+                                                 {
+                                                     "case_id":  69,
+                                                     "max_error":  0.18119992
+                                                 },
+                                                 {
+                                                     "case_id":  70,
+                                                     "max_error":  0.00894008
+                                                 },
+                                                 {
+                                                     "case_id":  71,
+                                                     "max_error":  0.03279012
+                                                 },
+                                                 {
+                                                     "case_id":  72,
+                                                     "max_error":  0.01604930
+                                                 },
+                                                 {
+                                                     "case_id":  73,
+                                                     "max_error":  0.03827010
+                                                 },
+                                                 {
+                                                     "case_id":  74,
+                                                     "max_error":  0.08258125
+                                                 },
+                                                 {
+                                                     "case_id":  75,
+                                                     "max_error":  0.04649657
+                                                 },
+                                                 {
+                                                     "case_id":  76,
+                                                     "max_error":  0.02182734
+                                                 },
+                                                 {
+                                                     "case_id":  77,
+                                                     "max_error":  0.36569858
+                                                 },
+                                                 {
+                                                     "case_id":  78,
+                                                     "max_error":  0.25326656
+                                                 },
+                                                 {
+                                                     "case_id":  79,
+                                                     "max_error":  0.03530910
+                                                 },
+                                                 {
+                                                     "case_id":  80,
+                                                     "max_error":  0.02001079
+                                                 },
+                                                 {
+                                                     "case_id":  81,
+                                                     "max_error":  0.06552523
+                                                 },
+                                                 {
+                                                     "case_id":  82,
+                                                     "max_error":  0.00905363
+                                                 },
+                                                 {
+                                                     "case_id":  83,
+                                                     "max_error":  0.01560001
+                                                 },
+                                                 {
+                                                     "case_id":  84,
+                                                     "max_error":  0.02863517
+                                                 },
+                                                 {
+                                                     "case_id":  85,
+                                                     "max_error":  0.58091066
+                                                 },
+                                                 {
+                                                     "case_id":  86,
+                                                     "max_error":  0.05408738
+                                                 },
+                                                 {
+                                                     "case_id":  87,
+                                                     "max_error":  0.01467482
+                                                 },
+                                                 {
+                                                     "case_id":  88,
+                                                     "max_error":  0.20795162
+                                                 },
+                                                 {
+                                                     "case_id":  89,
+                                                     "max_error":  0.10168919
+                                                 },
+                                                 {
+                                                     "case_id":  90,
+                                                     "max_error":  0.05215156
+                                                 },
+                                                 {
+                                                     "case_id":  91,
+                                                     "max_error":  0.03002697
+                                                 },
+                                                 {
+                                                     "case_id":  92,
+                                                     "max_error":  0.07161697
+                                                 },
+                                                 {
+                                                     "case_id":  93,
+                                                     "max_error":  0.13854493
+                                                 },
+                                                 {
+                                                     "case_id":  94,
+                                                     "max_error":  0.04036932
+                                                 },
+                                                 {
+                                                     "case_id":  95,
+                                                     "max_error":  0.02481901
+                                                 },
+                                                 {
+                                                     "case_id":  96,
+                                                     "max_error":  0.03304830
+                                                 },
+                                                 {
+                                                     "case_id":  97,
+                                                     "max_error":  0.10680710
+                                                 },
+                                                 {
+                                                     "case_id":  98,
+                                                     "max_error":  0.10505080
+                                                 },
+                                                 {
+                                                     "case_id":  99,
+                                                     "max_error":  0.02169049
+                                                 }
+                                             ],
+                           "parallel_errors":  [
+                                                   {
+                                                       "case_id":  0,
+                                                       "max_error":  0.06205004
+                                                   },
+                                                   {
+                                                       "case_id":  1,
+                                                       "max_error":  0.00903642
+                                                   },
+                                                   {
+                                                       "case_id":  2,
+                                                       "max_error":  0.09878202
+                                                   },
+                                                   {
+                                                       "case_id":  3,
+                                                       "max_error":  0.04595348
+                                                   },
+                                                   {
+                                                       "case_id":  4,
+                                                       "max_error":  0.17032551
+                                                   },
+                                                   {
+                                                       "case_id":  5,
+                                                       "max_error":  0.02022858
+                                                   },
+                                                   {
+                                                       "case_id":  6,
+                                                       "max_error":  0.01375618
+                                                   },
+                                                   {
+                                                       "case_id":  7,
+                                                       "max_error":  0.04926677
+                                                   },
+                                                   {
+                                                       "case_id":  8,
+                                                       "max_error":  0.03294799
+                                                   },
+                                                   {
+                                                       "case_id":  9,
+                                                       "max_error":  0.03634557
+                                                   },
+                                                   {
+                                                       "case_id":  10,
+                                                       "max_error":  0.06164599
+                                                   },
+                                                   {
+                                                       "case_id":  11,
+                                                       "max_error":  0.15030036
+                                                   },
+                                                   {
+                                                       "case_id":  12,
+                                                       "max_error":  0.04358573
+                                                   },
+                                                   {
+                                                       "case_id":  13,
+                                                       "max_error":  0.09831332
+                                                   },
+                                                   {
+                                                       "case_id":  14,
+                                                       "max_error":  0.02293898
+                                                   },
+                                                   {
+                                                       "case_id":  15,
+                                                       "max_error":  0.00674201
+                                                   },
+                                                   {
+                                                       "case_id":  16,
+                                                       "max_error":  0.52285020
+                                                   },
+                                                   {
+                                                       "case_id":  17,
+                                                       "max_error":  0.05943379
+                                                   },
+                                                   {
+                                                       "case_id":  18,
+                                                       "max_error":  0.02473691
+                                                   },
+                                                   {
+                                                       "case_id":  19,
+                                                       "max_error":  0.19517054
+                                                   },
+                                                   {
+                                                       "case_id":  20,
+                                                       "max_error":  0.23156939
+                                                   },
+                                                   {
+                                                       "case_id":  21,
+                                                       "max_error":  0.04125114
+                                                   },
+                                                   {
+                                                       "case_id":  22,
+                                                       "max_error":  0.00748059
+                                                   },
+                                                   {
+                                                       "case_id":  23,
+                                                       "max_error":  0.09201742
+                                                   },
+                                                   {
+                                                       "case_id":  24,
+                                                       "max_error":  0.01916624
+                                                   },
+                                                   {
+                                                       "case_id":  25,
+                                                       "max_error":  0.19094138
+                                                   },
+                                                   {
+                                                       "case_id":  26,
+                                                       "max_error":  0.01451117
+                                                   },
+                                                   {
+                                                       "case_id":  27,
+                                                       "max_error":  0.04910965
+                                                   },
+                                                   {
+                                                       "case_id":  28,
+                                                       "max_error":  0.04930622
+                                                   },
+                                                   {
+                                                       "case_id":  29,
+                                                       "max_error":  0.11252197
+                                                   },
+                                                   {
+                                                       "case_id":  30,
+                                                       "max_error":  0.00966860
+                                                   },
+                                                   {
+                                                       "case_id":  31,
+                                                       "max_error":  0.09620972
+                                                   },
+                                                   {
+                                                       "case_id":  32,
+                                                       "max_error":  0.15623548
+                                                   },
+                                                   {
+                                                       "case_id":  33,
+                                                       "max_error":  0.79438214
+                                                   },
+                                                   {
+                                                       "case_id":  34,
+                                                       "max_error":  0.21296092
+                                                   },
+                                                   {
+                                                       "case_id":  35,
+                                                       "max_error":  0.01730286
+                                                   },
+                                                   {
+                                                       "case_id":  36,
+                                                       "max_error":  0.21065393
+                                                   },
+                                                   {
+                                                       "case_id":  37,
+                                                       "max_error":  0.03511376
+                                                   },
+                                                   {
+                                                       "case_id":  38,
+                                                       "max_error":  0.03894021
+                                                   },
+                                                   {
+                                                       "case_id":  39,
+                                                       "max_error":  0.07652329
+                                                   },
+                                                   {
+                                                       "case_id":  40,
+                                                       "max_error":  0.27823856
+                                                   },
+                                                   {
+                                                       "case_id":  41,
+                                                       "max_error":  0.11077124
+                                                   },
+                                                   {
+                                                       "case_id":  42,
+                                                       "max_error":  0.02348332
+                                                   },
+                                                   {
+                                                       "case_id":  43,
+                                                       "max_error":  0.03567068
+                                                   },
+                                                   {
+                                                       "case_id":  44,
+                                                       "max_error":  0.14634196
+                                                   },
+                                                   {
+                                                       "case_id":  45,
+                                                       "max_error":  0.13077423
+                                                   },
+                                                   {
+                                                       "case_id":  46,
+                                                       "max_error":  0.17199315
+                                                   },
+                                                   {
+                                                       "case_id":  47,
+                                                       "max_error":  0.10554341
+                                                   },
+                                                   {
+                                                       "case_id":  48,
+                                                       "max_error":  0.01432984
+                                                   },
+                                                   {
+                                                       "case_id":  49,
+                                                       "max_error":  0.10290109
+                                                   },
+                                                   {
+                                                       "case_id":  50,
+                                                       "max_error":  0.10182278
+                                                   },
+                                                   {
+                                                       "case_id":  51,
+                                                       "max_error":  0.05432205
+                                                   },
+                                                   {
+                                                       "case_id":  52,
+                                                       "max_error":  0.10595536
+                                                   },
+                                                   {
+                                                       "case_id":  53,
+                                                       "max_error":  0.10634443
+                                                   },
+                                                   {
+                                                       "case_id":  54,
+                                                       "max_error":  0.13209640
+                                                   },
+                                                   {
+                                                       "case_id":  55,
+                                                       "max_error":  0.01453862
+                                                   },
+                                                   {
+                                                       "case_id":  56,
+                                                       "max_error":  0.07481701
+                                                   },
+                                                   {
+                                                       "case_id":  57,
+                                                       "max_error":  0.11403793
+                                                   },
+                                                   {
+                                                       "case_id":  58,
+                                                       "max_error":  0.02616066
+                                                   },
+                                                   {
+                                                       "case_id":  59,
+                                                       "max_error":  0.00825533
+                                                   },
+                                                   {
+                                                       "case_id":  60,
+                                                       "max_error":  0.01701029
+                                                   },
+                                                   {
+                                                       "case_id":  61,
+                                                       "max_error":  0.03671883
+                                                   },
+                                                   {
+                                                       "case_id":  62,
+                                                       "max_error":  0.09928237
+                                                   },
+                                                   {
+                                                       "case_id":  63,
+                                                       "max_error":  0.01875188
+                                                   },
+                                                   {
+                                                       "case_id":  64,
+                                                       "max_error":  0.09928719
+                                                   },
+                                                   {
+                                                       "case_id":  65,
+                                                       "max_error":  0.05322567
+                                                   },
+                                                   {
+                                                       "case_id":  66,
+                                                       "max_error":  0.04176423
+                                                   },
+                                                   {
+                                                       "case_id":  67,
+                                                       "max_error":  0.11592342
+                                                   },
+                                                   {
+                                                       "case_id":  68,
+                                                       "max_error":  0.03883755
+                                                   },
+                                                   {
+                                                       "case_id":  69,
+                                                       "max_error":  0.18119992
+                                                   },
+                                                   {
+                                                       "case_id":  70,
+                                                       "max_error":  0.00894008
+                                                   },
+                                                   {
+                                                       "case_id":  71,
+                                                       "max_error":  0.03279012
+                                                   },
+                                                   {
+                                                       "case_id":  72,
+                                                       "max_error":  0.01604930
+                                                   },
+                                                   {
+                                                       "case_id":  73,
+                                                       "max_error":  0.03827010
+                                                   },
+                                                   {
+                                                       "case_id":  74,
+                                                       "max_error":  0.08258125
+                                                   },
+                                                   {
+                                                       "case_id":  75,
+                                                       "max_error":  0.04649657
+                                                   },
+                                                   {
+                                                       "case_id":  76,
+                                                       "max_error":  0.02182734
+                                                   },
+                                                   {
+                                                       "case_id":  77,
+                                                       "max_error":  0.36569858
+                                                   },
+                                                   {
+                                                       "case_id":  78,
+                                                       "max_error":  0.25326656
+                                                   },
+                                                   {
+                                                       "case_id":  79,
+                                                       "max_error":  0.03530910
+                                                   },
+                                                   {
+                                                       "case_id":  80,
+                                                       "max_error":  0.02001079
+                                                   },
+                                                   {
+                                                       "case_id":  81,
+                                                       "max_error":  0.06552523
+                                                   },
+                                                   {
+                                                       "case_id":  82,
+                                                       "max_error":  0.00905363
+                                                   },
+                                                   {
+                                                       "case_id":  83,
+                                                       "max_error":  0.01560001
+                                                   },
+                                                   {
+                                                       "case_id":  84,
+                                                       "max_error":  0.02863517
+                                                   },
+                                                   {
+                                                       "case_id":  85,
+                                                       "max_error":  0.58091066
+                                                   },
+                                                   {
+                                                       "case_id":  86,
+                                                       "max_error":  0.05408738
+                                                   },
+                                                   {
+                                                       "case_id":  87,
+                                                       "max_error":  0.01467482
+                                                   },
+                                                   {
+                                                       "case_id":  88,
+                                                       "max_error":  0.20795162
+                                                   },
+                                                   {
+                                                       "case_id":  89,
+                                                       "max_error":  0.10168919
+                                                   },
+                                                   {
+                                                       "case_id":  90,
+                                                       "max_error":  0.05215156
+                                                   },
+                                                   {
+                                                       "case_id":  91,
+                                                       "max_error":  0.03002697
+                                                   },
+                                                   {
+                                                       "case_id":  92,
+                                                       "max_error":  0.07161697
+                                                   },
+                                                   {
+                                                       "case_id":  93,
+                                                       "max_error":  0.13854493
+                                                   },
+                                                   {
+                                                       "case_id":  94,
+                                                       "max_error":  0.04036932
+                                                   },
+                                                   {
+                                                       "case_id":  95,
+                                                       "max_error":  0.02481901
+                                                   },
+                                                   {
+                                                       "case_id":  96,
+                                                       "max_error":  0.03304830
+                                                   },
+                                                   {
+                                                       "case_id":  97,
+                                                       "max_error":  0.10680710
+                                                   },
+                                                   {
+                                                       "case_id":  98,
+                                                       "max_error":  0.10505080
+                                                   },
+                                                   {
+                                                       "case_id":  99,
+                                                       "max_error":  0.02169049
+                                                   }
+                                               ]
+                       }
+                   ]
+}
