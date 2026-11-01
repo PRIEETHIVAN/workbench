@@ -2,9 +2,9 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run Packaged Workbench",
+      "label": "Run Workbench",
       "type": "shell",
-      "command": "Start-Process -FilePath '${workspaceFolder}\\dist\\UnifiedEngineeringWorkbench\\Launch.exe' -WorkingDirectory '${workspaceFolder}\\dist\\UnifiedEngineeringWorkbench' -WindowStyle Hidden",
+      "command": "$root='${workspaceFolder}'; $stage=Join-Path $root 'dist\\UnifiedEngineeringWorkbench'; $exe=Join-Path $root 'Launch.exe'; if (-not (Test-Path -LiteralPath $exe)) { $exe=Join-Path $stage 'Launch.exe'; $root=$stage }; if (-not (Test-Path -LiteralPath $exe)) { throw 'Run scripts/package_release.ps1 -StageOnly first.' }; Start-Process -FilePath $exe -WorkingDirectory $root -WindowStyle Hidden",
       "options": { "cwd": "${workspaceFolder}" },
       "problemMatcher": [],
       "group": { "kind": "build", "isDefault": true },

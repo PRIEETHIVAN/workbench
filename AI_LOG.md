@@ -74,6 +74,8 @@ OpenAI Codex assisted with a review and completion pass after the earlier disclo
 
 Verification performed in this session: GNU 16.2.0 Release build refreshed; CTest `workbench_core` passed 1/1; the evidence script exercised sample parsers, FEA, backpropagation, mock devices, local asset delivery, and three parallel worker counts. The exact workstation measurements are recorded in `results/` and summarized in `docs/report.md`.
 
+Release hardening also anchors the process working directory to the executable folder. A smoke launch from an unrelated working directory successfully served the root page, health endpoint, sample STL, and local Three.js file.
+
 ### Corrections to earlier draft disclosure
 
 - Three.js and Chart.js are now bundled and served locally. The earlier statement that the frontend needs CDN access is obsolete.

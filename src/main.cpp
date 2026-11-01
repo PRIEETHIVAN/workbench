@@ -28,6 +28,7 @@
 #include <chrono>
 #include <cmath>
 #include <cstdlib>
+#include <filesystem>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -287,6 +288,26 @@ static std::string backprop_result_to_json(
 // â”€â”€â”€ main â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 int main() {
+#ifdef _WIN32
+    // Explorer and shortcuts do not guarantee the process working directory.
+    // Resolve bundled frontend/data beside the executable for reliable launch.
+    std::vector<wchar_t> module_path(32768, L'\0');
+    const DWORD path_length = GetModuleFileNameW(
+        nullptr, module_path.data(), static_cast<DWORD>(module_path.size()));
+    if (path_length == 0 || path_length >= module_path.size()) {
+        std::cerr << "[ERROR] Could not resolve the executable directory.\n";
+        return 1;
+    }
+    module_path.resize(path_length);
+    std::error_code directory_error;
+    std::filesystem::current_path(
+        std::filesystem::path(module_path.data()).parent_path(), directory_error);
+    if (directory_error) {
+        std::cerr << "[ERROR] Could not set the application directory: "
+                  << directory_error.message() << "\n";
+        return 1;
+    }
+#endif
     httplib::Server svr;
 
     // Register the pinned browser bundles before the catch-all frontend mount.

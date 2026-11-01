@@ -8,7 +8,7 @@
 
 The workbench combines the assignment's geometry, thermal finite-element, batch-performance, embedded-interface, and backpropagation demonstrations in one local application. The C++ service owns numerical calculations and parsers. The browser interface uses locally bundled Three.js and Chart.js, so the application does not need a CDN or internet connection after extraction. Device operations are simulated.
 
-The Windows launcher serves the interface and REST API on loopback (`127.0.0.1`, default port 8765) and opens the default browser. `WORKBENCH_PORT` selects another port; `WORKBENCH_NO_BROWSER=1` suppresses browser startup for scripted evidence capture. Source and tests build separately with CMake and a C++17 compiler.
+The Windows launcher serves the interface and REST API on loopback (`127.0.0.1`, default port 8765) and opens the default browser. It resolves bundled resources relative to the executable, independent of the process's starting directory. `WORKBENCH_PORT` selects another port; `WORKBENCH_NO_BROWSER=1` suppresses browser startup for scripted evidence capture. Source and tests build separately with CMake and a C++17 compiler.
 
 ## 2. Geometry input
 
@@ -43,9 +43,9 @@ The captured run used 100 cases, mesh baseline 48, seed 42, one warm-up, and fiv
 
 | Workers | Serial median (ms) | Parallel median (ms) | Speedup | Efficiency | Max nodal difference (°C) |
 |---:|---:|---:|---:|---:|---:|
-| 1 | 4.6772 | 5.2742 | 0.8868 | 0.8868 | 0 |
-| 2 | 4.4960 | 3.2736 | 1.3734 | 0.6867 | 0 |
-| 4 | 4.6755 | 2.4598 | 1.9008 | 0.4752 | 0 |
+| 1 | 4.8065 | 5.3692 | 0.8952 | 0.8952 | 0 |
+| 2 | 5.4078 | 2.7570 | 1.9615 | 0.9807 | 0 |
+| 4 | 4.8135 | 1.9533 | 2.4643 | 0.6161 | 0 |
 
 All rows passed the `1e-8 °C` agreement limit. One worker is slower than serial on this capture, which is expected from thread-pool overhead. These measurements describe this workstation only: AMD64 Family 25 Model 116, 8 physical/16 logical cores, 15,654 MB reported RAM, GNU 16.2.0, and `-Wall -Wextra -O2 -pthread`.
 

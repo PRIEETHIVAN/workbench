@@ -1,4 +1,4 @@
-﻿# Unified Engineering Workbench
+# Unified Engineering Workbench
 
 C++17 engineering prototype for ASCII STL inspection, thermal finite elements, independent batch solves, simulated embedded devices, and scalar neural-network backpropagation.
 
@@ -12,7 +12,7 @@ The release bundles the Three.js and Chart.js files locally and works offline. T
 
 ## Run from VS Code
 
-The repository includes **Run Packaged Workbench** under **Terminal → Run Task**. It starts the same staged `dist/UnifiedEngineeringWorkbench/Launch.exe` shipped in the ZIP. No terminal command or build is needed to use the packaged app. The C/C++ extension and CMake Tools extension are recommended for source editing, kit selection, and debugging.
+The repository includes **Run Workbench** under **Terminal → Run Task**. From the source repository, first prepare the staging folder with `scripts/package_release.ps1 -StageOnly`; the task then starts that executable. If you open an extracted release folder in VS Code, the same task starts its root `Launch.exe`. The C/C++ extension and CMake Tools extension are recommended for source editing, kit selection, and debugging.
 
 ## Build from source
 
